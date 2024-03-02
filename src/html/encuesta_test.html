@@ -1,0 +1,179 @@
+<!-- Formulario con lista desplegable, cuadro de texto, opciones (checklist 1 opción, n opciones (todas, ninguna)), Pregunta, textarea, submit -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--Animaciones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        .logo svg {
+            height: 50px;
+        }
+
+        label,
+        textarea {
+          font-size: 0.8rem;
+          letter-spacing: 1px;
+        }
+
+        textarea {
+          padding: 10px;
+          max-width: 100%;
+          line-height: 1.5;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          box-shadow: 1px 1px 1px #999;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .question{
+            color: blue;
+            font-size: 27;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+    <title>User_Administrador</title>
+</head>
+<body>
+    
+    <!-- Navbar --> 
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <svg class="logo" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="white" />
+                <text x="50%" y="50%" text-anchor="middle" fill="#5D6D7E" dy=".3em">Logo</text>
+            </svg>
+        </a>
+        <div class="ml-auto">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Encuestas</button>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Cambiar contraseña</button>
+        </div>
+    </header>
+
+    <!-- Formulario desplegable -->
+    <div class="container d-flex align-items-center flex-column">
+        <form action="../js/formulario_index.js" method="post">
+            <div class="my-1">
+                <label for="inlineFormCustomSelectPref" class="question">1-. ¿Qué orden debe tener el cereal?</label>
+                <select class="custom-select" id="inlineFormCustomSelectPref" name="preference">
+                    <option selected>Selecciona</option>
+                    <option value="1">Plato - Cereal - Leche</option>
+                    <option value="2">Cereal - Leche - Plato</option>
+                    <option value="3">Leche  - Plato - Cereal</option>
+                </select>
+            </div>
+
+            <!-- Caja de Texto -->
+            <div class="mt-3">
+                <label for="story" class="question">¿Por qué estas de acuerdo?</label>
+                <textarea id="story" name="story" rows="5" cols="33"></textarea>
+            </div>
+
+            <!-- Radios de una sola opcion -->
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+            </div>
+
+            <!-- Checkbox -->
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Check this custom checkbox 1</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">Check this custom checkbox 2</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Check this custom checkbox 3</label>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary my-1">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer --> 
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 EncuestaCorp. Todos los derechos reservados.</p>
+            <div class="mt-2">
+                <a href="#" class="text-light mx-2">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="text-light mx-2">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Javascript-->
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Scripts propios -->
+    <script src="../js/formulario_index.js"></script>
+
+    <!-- Script para agregar animaciones -->
+    <script>
+        $(document).ready(function () {
+            // Evento change para el select
+            $('#inlineFormCustomSelectPref').change(function () {
+                // Obtener el valor seleccionado
+                var selectedValue = $(this).val();
+
+                // Remover clases de animación
+                $(this).removeClass('animate__animated animate__shakeX animate__fadeIn');
+
+                // Agregar clase de animación basada en la opción seleccionada
+                if (selectedValue === '1') {
+                    $(this).addClass('animate__animated animate__shakeX');
+                } else if (selectedValue === '2') {
+                    $(this).addClass('animate__animated animate__fadeIn');
+                }
+            });
+
+            // Evento click para los checkboxes
+            $('.custom-checkbox input').click(function () {
+                // Obtener el estado actual del checkbox
+                var isChecked = $(this).prop('checked');
+
+                // Remover clases de animación
+                $(this).siblings('label').removeClass('animate__animated animate__bounceIn');
+
+                // Agregar clase de animación si el checkbox está marcado
+                if (isChecked) {
+                    $(this).siblings('label').addClass('animate__animated animate__bounceIn');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>
