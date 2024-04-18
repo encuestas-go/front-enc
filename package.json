@@ -7,8 +7,8 @@
     "prettier": "^3.2.5"
   },
   "scripts": {
-    "start": "parcel src/html/*.html",
-    "build": "parcel build src/html/*.html --dist-dir dist",
+    "start": "parcel src/HTML/*.html",
+    "build": "parcel build src/HTML/*.html --dist-dir dist",
     "lint": "eslint src/js/*.js",
     "format": "prettier --write 'src/**/*.{js,css,html}'",
     "test": "jest"

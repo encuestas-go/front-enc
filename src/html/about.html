@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Akpager - Multipurpose Landing page HTML Template || About</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="assets/images/logos/favicon.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="assets/css/flaticon.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome-5.14.0.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader"><div class="custom-loader"></div></div>
+
+        <!-- main header -->
+        <header class="main-header menu-absolute header-white no-border">
+
+            <!--Header-Upper-->
+            <div class="header-upper">
+                <div class="container container-1660 clearfix">
+
+                    <div class="header-inner py-15 rel d-flex align-items-center">
+                        <div class="logo-outer">
+                            <div class="logo"><a href="index.html"><img src="assets/images/logos/logo.png" alt="Logo" title="Logo"></a></div>
+                        </div>
+
+                        <div class="nav-outer ms-lg-auto clearfix">
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-lg">
+                                <div class="navbar-header py-10">
+                                   <div class="mobile-logo">
+                                       <a href="index.html">
+                                            <img src="assets/images/logos/logo.png" alt="Logo" title="Logo">
+                                       </a>
+                                   </div>
+                                   
+                                    <!-- Toggle Button -->
+                                    <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li class="dropdown"><a href="#">Home</a>
+                                            <ul>
+                                                <li class="dropdown"><a href="#">MultiPage</a>
+                                                    <ul>
+                                                        <li><a href="index.html">Business</a></li>
+                                                        <li><a href="index2.html">Lead Capture</a></li>
+                                                        <li><a href="index3.html">Software Landing</a></li>
+                                                        <li><a href="index4.html">E-learning</a></li>
+                                                        <li><a href="index5.html">Saas Landing</a></li>
+                                                        <li><a href="index6.html">AI Software</a></li>
+                                                        <li><a href="index7.html">Website Builder</a></li>
+                                                        <li><a href="index8.html">Fintech</a></li>
+                                                        <li><a href="index9.html">Chatbot</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown"><a href="#">OnePage</a>
+                                                    <ul>
+                                                        <li><a href="index1-onepage.html">Business</a></li>
+                                                        <li><a href="index2-onepage.html">Lead Capture</a></li>
+                                                        <li><a href="index3-onepage.html">Software Landing</a></li>
+                                                        <li><a href="index4-onepage.html">E-learning</a></li>
+                                                        <li><a href="index5-onepage.html">Saas Landing</a></li>
+                                                        <li><a href="index6-onepage.html">AI Software</a></li>
+                                                        <li><a href="index7-onepage.html">Website Builder</a></li>
+                                                        <li><a href="index8-onepage.html">Fintech</a></li>
+                                                        <li><a href="index9-onepage.html">Chatbot</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">pages</a>
+                                            <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="faqs.html">faqs</a></li>
+                                                <li><a href="team.html">Team Members</a></li>
+                                                <li><a href="pricing.html">Pricing Plan</a></li>
+                                                <li><a href="contact.html">Contact us</a></li>
+                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                <li><a href="404.html">404 error</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Services</a>
+                                            <ul>
+                                                <li><a href="services.html">Our Services</a></li>
+                                                <li><a href="service-details.html">Service Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Shop</a>
+                                            <ul>
+                                                <li><a href="shop.html">our Products</a></li>
+                                                <li><a href="product-details.html">Product Details</a></li>
+                                                <li><a href="cart.html">Shopping Cart</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Projects</a>
+                                            <ul>
+                                                <li><a href="projects.html">Project Grid</a></li>
+                                                <li><a href="project-list.html">Project List</a></li>
+                                                <li><a href="project-masonry.html">Project Masonry</a></li>
+                                                <li><a href="project-details.html">Project Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">blog</a>
+                                            <ul>
+                                                <li><a href="blog.html">blog standard</a></li>
+                                                <li><a href="blog-details.html">blog details</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                        
+                        <!-- Nav Search -->
+                        <div class="nav-search ms-xl-2 ms-4 py-10">
+                            <button class="far fa-search"></button>
+                            <form action="#" class="hide">
+                                <input type="text" placeholder="Search" class="searchbox" required="">
+                                <button type="submit" class="searchbutton far fa-search"></button>
+                            </form>
+                        </div>
+                        
+                        <!-- Menu Button -->
+                        <div class="menu-btns ms-lg-auto d-none d-xl-flex">
+                            <a href="contact.html" class="theme-btn">Get Started <i class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+        </header>
+       
+       
+       <!-- Page Banner Start -->
+        <section class="page-banner-area overlay py-250 rpy-120 rel z-1 bgs-cover text-center" style="background-image: url(assets/images/backgrounds/banner.jpg);">
+            <div class="container">
+                <div class="banner-inner pt-70 rpt-60 text-white">
+                    <h1 class="page-title" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">About Company</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" data-aos-offset="50">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">About Company</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!-- Page Banner End -->
+       
+        
+        <!-- About Area Start -->
+        <section class="about-area py-90 rpy-60">
+            <div class="container">
+                <div class="row gap-90 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-images my-40" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
+                            <img src="assets/images/about/about-page.png" alt="About">
+                            <div class="about-over">
+                                <img src="assets/images/about/about2.png" alt="About">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-content mt-40 rmt-15" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
+                            <div class="section-title mb-30">
+                                <h2>Discover Our Company's Vision and Commitment to Excellence</h2>
+                            </div>
+                            <p>Business consulting is a dynamic and multifaceted field that plays a pivotal role in helping organizations thrive in today's competitive landscape. These consulting services are sought after by businesses of all sizes</p>
+                            <div class="row pt-30">
+                                <div class="col-sm-6">
+                                    <div class="counter-item counter-text-wrap counted">
+                                        <span class="count-text percent" data-speed="3000" data-stop="95">95</span>
+                                        <h5 class="counter-title">Strategy Consulting</h5>
+                                        <div class="text">Strategy consultants work closely organizations define their</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item counter-text-wrap counted">
+                                        <span class="count-text percent" data-speed="3000" data-stop="85">85</span>
+                                        <h5 class="counter-title">Financial Consulting</h5>
+                                        <div class="text">Financial consultants provides the financial planning, budgeting</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Area End -->
+        
+        
+        <!-- Features Area Start -->
+        <section class="about-features-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="iconic-box style-seven border">
+                            <div class="icon-title">
+                                <i class="far fa-cloud-upload"></i>
+                                <h5><a href="service-details.html">Real-Time Updates</a></h5>
+                            </div>
+                            <div class="content">
+                                <p>Marketing agencies, for example, focus on promoting products or services</p>
+                            </div>
+                            <div class="bg">
+                                <img src="assets/images/shapes/iconic-box-seven-bg2.png" alt="Shape">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="iconic-box style-seven border">
+                            <div class="icon-title">
+                                <i class="far fa-bullseye-arrow"></i>
+                                <h5><a href="service-details.html">Align Money & Goals</a></h5>
+                            </div>
+                            <div class="content">
+                                <p>They leverage the digital marketing social media, SEO, traditional advertising</p>
+                            </div>
+                            <div class="bg">
+                                <img src="assets/images/shapes/iconic-box-seven-bg2.png" alt="Shape">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="iconic-box style-seven border">
+                            <div class="icon-title">
+                                <i class="far fa-layer-group"></i>
+                                <h5><a href="service-details.html">Quietly Powerful</a></h5>
+                            </div>
+                            <div class="content">
+                                <p>Agencies offer specialized expertise in areas such as management, finance</p>
+                            </div>
+                            <div class="bg">
+                                <img src="assets/images/shapes/iconic-box-seven-bg2.png" alt="Shape">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Area End -->
+        
+        
+        <!-- Data Analytics Area Start -->
+        <section class="data-analytics-area pt-60 rpt-30 pb-90 rpb-60">
+            <div class="container">
+                <div class="row gap-110 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="data-analytics-content mt-40 rmb-20" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
+                            <div class="section-title mb-30">
+                                <h2>Artificial Intelligence Data Analytics Solutions</h2>
+                            </div>
+                            <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium totames aperiam eaque quae abillo inventore quasi architecto beatae vitae dicta sunt explicabos</p>
+                            <ul class="icon-list style-two">
+                                <li><i class="fal fa-check"></i> Connect with leads with zero hassle.</li>
+                                <li><i class="fal fa-check"></i> Take quick payments direct from meetings</li>
+                            </ul>
+                            <a href="#" class="theme-btn style-four mt-50">Learn More <i class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="management-images float-lg-end my-40" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
+                            <img class="rounded-0" src="assets/images/about/management-four.png" alt="Management">
+                            <div class="management-over">
+                                <img src="assets/images/about/management-four1.png" alt="Management">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Data Analytics Area End -->
+        
+        
+        <!-- CTA Area Start -->
+        <section class="cta-area bgs-cover py-130 rpy-100" style="background-image: url(assets/images/backgrounds/cta.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="cta-content text-white rmb-35" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
+                            <div class="section-title mb-40">
+                                <span class="subtitle d-block mb-10">Website Builder</span>
+                                <h2>Ready Work Together to Create Website?</h2>
+                            </div>
+                            <a href="contact.html" class="theme-btn">Contact Us <i class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cta-btn text-lg-center text-start ps-lg-0 ps-2" data-aos="zoom-in-right" data-aos-duration="1500">
+                            <a href="https://www.youtube.com/watch?v=9Y7ma241N8k" class="mfp-iframe video-play"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Area End -->
+        
+        
+        
+        <!-- Team Area Start -->
+        <section class="team-area pt-130 rpt-100 pb-85 rpb-55">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="section-title text-center mb-55" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                            <h2>Let’s Meet Our Professionals Team Members</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+                            <div class="image">
+                                <img src="assets/images/team/member1.png" alt="Team">
+                                <div class="social-media">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h5>Jerome C. Ramirez</h5>
+                                <span class="designation">CEO & Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+                            <div class="image">
+                                <img src="assets/images/team/member2.png" alt="Team">
+                                <div class="social-media">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h5>Reginald F. Richardson</h5>
+                                <span class="designation">Senior Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
+                            <div class="image">
+                                <img src="assets/images/team/member3.png" alt="Team">
+                                <div class="social-media">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h5>Patrick D. Kozlowski</h5>
+                                <span class="designation">Web Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000" data-aos-offset="50">
+                            <div class="image">
+                                <img src="assets/images/team/member4.png" alt="Team">
+                                <div class="social-media">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h5>Patrick M. Piazza</h5>
+                                <span class="designation">Junior manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team Area End -->
+        
+        
+        <!-- Counter Area Start -->
+        <div class="counter-area-ten pb-100 rpb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="counter-item style-six counter-text-wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+                            <span class="count-text plus" data-speed="3000" data-stop="1253">0</span>
+                            <hr>
+                            <span class="counter-title">Satisficed Clients</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="counter-item style-six counter-text-wrap" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+                            <span class="count-text k-plus" data-speed="3000" data-stop="85">0</span>
+                            <hr>
+                            <span class="counter-title">Project Complete</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="counter-item style-six counter-text-wrap" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
+                            <span class="count-text m-plus" data-speed="3000" data-stop="3">0</span>
+                            <hr>
+                            <span class="counter-title">Active Users</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="counter-item style-six counter-text-wrap" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000" data-aos-offset="50">
+                            <span class="count-text percent" data-speed="3000" data-stop="83">0</span>
+                            <hr>
+                            <span class="counter-title">Positive Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Counter Area End -->
+        
+        
+        <!-- Client Logos Area Start -->
+        <section class="client-logo-area-two pt-130 rpt-100 pb-95 rpb-65 bgc-navyblue">
+            <div class="section-title text-center text-white mb-40" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                <h4>I’ve 1253+ Global Clients & lot’s of Project Complete</h4>
+            </div>
+            <div class="container">
+                <div class="row logo-white justify-content-center row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2">
+                    <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two1.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two2.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two3.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two4.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two9.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two5.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two10.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two7.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two6.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
+                        <div class="client-logo-item style-three">
+                            <a href="#"><img src="assets/images/client-logos/client-logo-two8.png" alt="Client Logo"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Client Logos Area End -->
+        
+        
+        <!-- Testimonials Area Start -->
+        <section class="testimonials-area py-130 rpy-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-9 col-md-11">
+                        <div class="section-title text-center mb-60" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                            <h2>1253+ Global Clients Say About Our Business Services</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-slider-nine">
+                    <div class="testimonial-item">
+                        <div class="author">
+                            <div class="image">
+                                <img src="assets/images/testimonials/author11.png" alt="Author">
+                            </div>
+                            <div class="title"><b>Kathryn Murphy /</b> System Analyst</div>
+                        </div>
+                        <div class="author-text">Highly recommended! This we product exceeded expectation in every way. It has become an essential part of my daily lifes and I'm grateful impact</div>
+                        <div class="testi-footer">
+                            <div class="ratting mt-10">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text mt-10"><span>4.7/5</span> on Trustpilot</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="author">
+                            <div class="image">
+                                <img src="assets/images/testimonials/author12.png" alt="Author">
+                            </div>
+                            <div class="title"><b>Cody Fisher /</b> Chief Technology Officer</div>
+                        </div>
+                        <div class="author-text">Prompt delivery & top-notch quality. Impressed with to the speed and accuracy. The ways efficiency and speed at which they delivered the product is were impressive.</div>
+                        <div class="testi-footer">
+                            <div class="ratting mt-10">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text mt-10"><span>4.7/5</span> on Trustpilot</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="author">
+                            <div class="image">
+                                <img src="assets/images/testimonials/author13.png" alt="Author">
+                            </div>
+                            <div class="title"><b>Devon Lane /</b> Delivery Head</div>
+                        </div>
+                        <div class="author-text">Life-changing experience! I learned so much from their program. Participating in their program was a transformative experience for me.</div>
+                        <div class="testi-footer">
+                            <div class="ratting mt-10">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text mt-10"><span>4.7/5</span> on Trustpilot</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="author">
+                            <div class="image">
+                                <img src="assets/images/testimonials/author5.png" alt="Author">
+                            </div>
+                            <div class="title"><b>Cody Fisher /</b> Chief Technology Officer</div>
+                        </div>
+                        <div class="author-text">Prompt delivery & top-notch quality. Impressed with to the speed and accuracy. The ways efficiency and speed at which they delivered the product is were impressive.</div>
+                        <div class="testi-footer">
+                            <div class="ratting mt-10">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text mt-10"><span>4.7/5</span> on Trustpilot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Area End -->
+        
+       
+        <!-- footer area start -->
+        <footer class="main-footer footer-one rel z-1 mt-100">
+            <div class="container">
+                <div class="footer-newsletter text-white">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="logo-part" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
+                                <div class="logo mb-10">
+                                    <a href="index.html"><img src="assets/images/logos/logo-white.png" alt="Logo"></a>
+                                </div>
+                                <p>Digital Business Consulting Agency</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="form-part" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
+                                <h5>Subscribe Our Newsletter</h5>
+                                <form class="newsletter-form mt-15" action="#">
+                                    <input type="email" placeholder="Email Address" required="">
+                                    <button type="submit">Sign Up <i class="far fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer-widget widget-about" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+                            <h6 class="footer-title">About Company</h6>
+                            <p>Doloremque laudantium tota aperiam eaque abillo inventore architect beatae vitae dicta sunt explicabos</p>
+                            <div class="social-style-one">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6 order-xl-2">
+                        <div class="footer-widget widget-contact" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-offset="50">
+                            <h6 class="footer-title">Contact</h6>
+                            <ul>
+                                <li><i class="fal fa-map-marker-alt"></i> 55 Main Street, 2nd block Melbourne, Australia</li>
+                                <li><i class="fal fa-envelope"></i> <a href="mailto:support@gmail.com">support@gmail.com</a></li>
+                                <li><i class="fal fa-phone"></i> <a href="callto:+0001234455">+000 (123) 44 55</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-sm-4 col-6">
+                                <div class="footer-widget widget-links" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-offset="50">
+                                    <h6 class="footer-title">Resources</h6>
+                                    <ul>
+                                        <li><a href="shop.html">Product</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">Benefits</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="footer-widget widget-links" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+                                    <h6 class="footer-title">Quick Link</h6>
+                                    <ul>
+                                        <li><a href="services.html">Features</a></li>
+                                        <li><a href="pricing.html">Pricing Plan</a></li>
+                                        <li><a href="about.html">Best Program</a></li>
+                                        <li><a href="contact.html">Press Kit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="footer-widget widget-links" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="50">
+                                    <h6 class="footer-title">Company</h6>
+                                    <ul>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="team.html">Team Member</a></li>
+                                        <li><a href="about.html">Reviews</a></li>
+                                        <li><a href="blog.html">Latest News</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom mt-30 py-15">
+                    <div class="row align-items-center">
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="copyright-text pt-10 text-lg-start text-center wow fadeInLeft delay-0-2s">
+                                <p>Copyright @2024, <a href="index.html">Akpager </a> All Rights Reserved</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-6">
+                            <div class="footer-bottom-menu text-lg-end text-center wow fadeInRight delay-0-2s">
+                                <ul>
+                                    <li><a href="faqs.html">Faqs</a></li>
+                                    <li><a href="about.html">Setting</a></li>
+                                    <li><a href="about.html">Privacy</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scroll Top Button -->
+                    <button class="scroll-top scroll-to-target" data-target="html"><span class="far fa-angle-double-up"></span></button>
+                </div>
+            </div>
+        </footer>
+        <!-- footer area end -->
+
+    </div>
+    <!--End pagewrapper-->
+   
+    
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Appear Js -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- Slick -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Nice Select -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Image Loader -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Circle Progress -->
+    <script src="assets/js/circle-progress.min.js"></script>
+    <!-- Skillbar -->
+    <script src="assets/js/skill.bars.jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  AOS Animation -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Custom script -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

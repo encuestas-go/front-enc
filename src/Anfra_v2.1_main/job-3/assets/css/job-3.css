@@ -1,0 +1,352 @@
+.pt30 {
+  padding-top: 30px;
+}
+
+.pb30 {
+  padding-bottom: 30px;
+}
+
+.pt40 {
+  padding-top: 40px;
+}
+
+.pb40 {
+  padding-bottom: 40px;
+}
+
+.pt60 {
+  padding-top: 60px;
+}
+
+.pb60 {
+  padding-bottom: 60px;
+}
+
+.pt70 {
+  padding-top: 70px;
+}
+
+.pb70 {
+  padding-bottom: 70px;
+}
+
+.pt80 {
+  padding-top: 80px;
+}
+
+.pb80 {
+  padding-bottom: 80px;
+}
+
+.pt100 {
+  padding-top: 100px;
+}
+
+.pb100 {
+  padding-bottom: 100px;
+}
+
+.pt130 {
+  padding-top: 130px;
+}
+
+.pb130 {
+  padding-bottom: 130px;
+}
+
+.pt150 {
+  padding-top: 150px;
+}
+
+.pb150 {
+  padding-bottom: 150px;
+}
+
+.pt180 {
+  padding-top: 180px;
+}
+
+.pb180 {
+  padding-bottom: 180px;
+}
+
+.pt200 {
+  padding-top: 200px;
+}
+
+.pb200 {
+  padding-bottom: 200px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.ugf-wraper {
+  background: url(../images/bg/job-3-bg.jpg) no-repeat right top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.ufg-job-application-wrapper {
+  padding: 60px 0;
+}
+.ufg-job-application-wrapper .logo {
+  margin-bottom: 30px;
+}
+.ufg-job-application-wrapper h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1c2437;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 50px;
+}
+.ufg-job-application-wrapper .job-application-form .input-type-block + .input-type-block {
+  margin-top: 50px;
+}
+.ufg-job-application-wrapper .job-application-form .input-type-block.check-field .form-group, .ufg-job-application-wrapper .job-application-form .input-type-block.radio-field .form-group {
+  margin-bottom: 15px;
+}
+.ufg-job-application-wrapper .job-application-form .input-type-block.check-field .form-group:last-child, .ufg-job-application-wrapper .job-application-form .input-type-block.radio-field .form-group:last-child {
+  margin-bottom: 0;
+}
+.ufg-job-application-wrapper .job-application-form h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1c2437;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+}
+.ufg-job-application-wrapper .job-application-form h4 span {
+  font-weight: 400;
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group {
+  margin-bottom: 25px;
+}
+.ufg-job-application-wrapper .job-application-form .form-group:last-child {
+  margin-bottom: 0;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .form-control {
+  height: 60px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 30px;
+  padding: 0 25px;
+  color: #546274;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 1.4rem;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .form-control:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group textarea.form-control {
+  height: 140px;
+  padding-top: 15px;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-checkbox .custom-control-input {
+  height: 18px;
+  width: 18px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background: #1888f5;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-checkbox .custom-control-label {
+  width: auto;
+  text-align: left;
+  position: static;
+  top: auto;
+  left: auto;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  padding-left: 30px;
+  cursor: default;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-checkbox .custom-control-label:before {
+  top: 4px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-checkbox .custom-control-label:after {
+  top: 4px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-checkbox .custom-control-label a {
+  color: #1e85ff;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-radio .custom-control-input {
+  display: none;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-width: 2px;
+  border-color: #1e85ff;
+  background: #ffffff;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  opacity: 1;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-radio .custom-control-label {
+  width: auto;
+  text-align: left;
+  position: static;
+  top: auto;
+  left: auto;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  padding-left: 30px;
+  cursor: default;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #546274;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-radio .custom-control-label:before {
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-radio .custom-control-label:after {
+  top: 7px;
+  left: 5px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #1e85ff;
+  opacity: 0;
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-file {
+  height: auto;
+  height: 52px;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-file .form-control {
+  outline: none;
+  display: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-file .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-file .custom-file-label {
+  overflow: hidden;
+  margin-bottom: 0;
+  height: 60px;
+  border-radius: 30px;
+  padding: 0;
+  color: #b2becc;
+  border: 1px dashed #bfbfbf;
+  padding-left: 140px;
+  line-height: 60px;
+}
+.ufg-job-application-wrapper .job-application-form .form-group .custom-file .custom-file-label:after {
+  content: "+ CHOOSE FILE";
+  top: 16px;
+  left: 25px;
+  right: auto;
+  font-size: 1.2rem;
+  color: #546274;
+  background: #eceff2;
+  border-radius: 20px;
+  border: 0;
+}
+.ufg-job-application-wrapper .job-application-form .btn {
+  height: 60px;
+  width: 100%;
+  border-radius: 30px;
+  margin-top: 25px;
+  background: #1e85ff;
+  color: #ffffff;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.form-group{
+	position: relative;
+  }
+  .input-group span.error{
+	top: 20px !important;
+  }
+  .select-input span.error{
+	top: 20px !important;
+	right: 33px !important;
+  }
+  span.error{
+	  color: #ff0000 !important;
+	  position: absolute;
+	  right: 20px !important;
+	  top: 19px !important;
+	  left: auto !important;
+	  text-transform: none !important;
+	  min-width: max-content;
+	}
+	input.error{
+	  border-color: rgba(255, 0, 0, 0.50) !important;
+	}
+	input.error:focus{
+	  background: transparent !important;
+	  border: 1px solid rgba(255, 0, 0, 0.50) !important;
+	}
