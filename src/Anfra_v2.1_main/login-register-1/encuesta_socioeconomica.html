@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Template</title>
+    <title>información personal</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
     
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="icon" href="../../HTML/assets/images/logos/logo_upemor.jpg">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="assets/images/icon-114x114.png">
@@ -45,132 +45,321 @@
             <div class="col-lg-7 offset-lg-5 p-sm-0">
               <div class="ugf-content pt150">
                 <a href="account-category.html" class="prev-page">Volver a la anterior etapa</a>
-                <h2>Detalles de la cuenta</h2>
-                <p>Introduzca su información y una contraseña segura para avanzar al siguiente paso</p>
-                <form action="payment.html" class="account-form" id="commentForm">
+                <h2>Datos personales e información economica</h2>
+                <p>Introduzca su información personal de identidad e información de situación economica para avanzar al siguiente paso, toda la información se trata de forma segura y confidencial bajo los terminos y condiciones. </p>
+                <form class="account-form" id="commentForm">
                   <div class="row">
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputFname">Nombre completo</label>
-                        <input type="text" name="fname" placeholder="e.g. Jhon" class="form-control" id="inputFname" required>
+                        <input type="text" name="fname" placeholder="e.g. Jhon" class="form-control" id="inputfullname" required>
                       </div>
                     </div>
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputLname">Apellidos Completos</label>
-                        <input type="text" name="lName" placeholder="e.g. Smith" class="form-control" id="inputLname" required>
+                        <input type="text" name="lName" placeholder="e.g. Smith" class="form-control" id="inputname" required>
                       </div>
                     </div>
+                    <!--
                     <div class="col-md-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputPhone">Numero de Telefono</label>
                         <input type="tel" name="phn" placeholder="e.g. +99 123 4567 890" class="form-control" id="inputPhone" maxlength="15"  minlength="10" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                       </div>
                     </div>
+                    -->
                     <div class="col-md-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputDate">Fecha de nacimiento</label>
                         <div class="birth-date">
                           <div class="select-input birth-date-input">
                             <span></span>
-                            <select id="inputDate" name="date" class="form-control">
+                            <select id="inputday" name="date" class="form-control" required>
                               <option value="">Día</option>
-                              <option value="">01</option>
-                              <option value="">02</option>
-                              <option value="">03</option>
-                              <option value="">04</option>
-                              <option value="">05</option>
-                              <option value="">06</option>
-                              <option value="">07</option>
-                              <option value="">08</option>
-                              <option value="">09</option>
-                              <option value="">10</option>
-                              <option value="">11</option>
-                              <option value="">12</option>
-                              <option value="">13</option>
-                              <option value="">14</option>
-                              <option value="">15</option>
-                              <option value="">16</option>
-                              <option value="">17</option>
-                              <option value="">18</option>
-                              <option value="">19</option>
-                              <option value="">20</option>
-                              <option value="">21</option>
-                              <option value="">22</option>
-                              <option value="">23</option>
-                              <option value="">24</option>
-                              <option value="">25</option>
-                              <option value="">26</option>
-                              <option value="">27</option>
-                              <option value="">28</option>
-                              <option value="">29</option>
-                              <option value="">30</option>
+                              <option value="1">01</option>
+                              <option value="2">02</option>
+                              <option value="3">03</option>
+                              <option value="4">04</option>
+                              <option value="5">05</option>
+                              <option value="6">06</option>
+                              <option value="7">07</option>
+                              <option value="8">08</option>
+                              <option value="9">09</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
                             </select>
                           </div>
                           <div class="select-input birth-date-input">
                             <span></span>
-                            <select id="inputDate" name="month" class="form-control">
+                            <select id="inputmonth" name="month" class="form-control" required>
                               <option value="">Mes</option>
-                              <option value="">01</option>
-                              <option value="">02</option>
-                              <option value="">03</option>
-                              <option value="">04</option>
-                              <option value="">05</option>
-                              <option value="">06</option>
-                              <option value="">07</option>
-                              <option value="">08</option>
-                              <option value="">09</option>
-                              <option value="">10</option>
-                              <option value="">11</option>
-                              <option value="">12</option>
+                              <option value="1">01</option>
+                              <option value="2">02</option>
+                              <option value="3">03</option>
+                              <option value="4">04</option>
+                              <option value="5">05</option>
+                              <option value="6">06</option>
+                              <option value="7">07</option>
+                              <option value="8">08</option>
+                              <option value="9">09</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
                             </select>
                           </div>
                           <div class="select-input birth-date-input">
                             <span></span>
-                            <select id="inputDate" name="year" class="form-control">
+                            <select id="inputyear" name="year" class="form-control" required>
                             <option value="">Año</option>
-                            <option value="">1988</option>
-                            <option value="">1989</option>
-                            <option value="">1990</option>
-                            <option value="">1991</option>
-                            <option value="">1992</option>
-                            <option value="">1993</option>
-                            <option value="">1994</option>
-                            <option value="">1995</option>
-                            <option value="">1996</option>
-                            <option value="">1997</option>
-                            <option value="">1998</option>
-                            <option value="">1999</option>
-                            <option value="">2001</option>
-                            <option value="">2002</option>
-                            <option value="">2003</option>
-                            <option value="">2004</option>
-                            <option value="">2005</option>
-                            <option value="">2006</option>
-                            <option value="">2007</option>
-                            <option value="">2008</option>
-                            <option value="">2009</option>
-                            <option value="">2010</option>
-                            <option value="">2011</option>
-                            <option value="">2012</option>
-                            <option value="">2013</option>
-                            <option value="">2014</option>
-                            <option value="">2015</option>
-                            <option value="">2016</option>
-                            <option value="">2017</option>
-                            <option value="">2018</option>
-                            <option value="">2019</option>
-                            <option value="">2020</option>
-                            <option value="">2021</option>
-                            <option value="">2022</option>
-                            <option value="">2023</option>
-                            <option value="">2024</option>
+                            <option value="1988">1988</option>
+                            <option value="1989">1989</option>
+                            <option value="1990">1990</option>
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
                           </select>
                           </div>
                         </div>
                       </div>
                     </div>
+                    
+                    <!--Nacionalidad de usuario -->
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputNationality">Nacionalidad</label>
+                        <input id="nationality" type="text" name="nationality" placeholder="e.g. Mexicano" class="form-control" id="Nacionalidad" maxlength="16"  minlength="5" required>
+                      </div>
+                    </div>
+                    
+                    <div class="select-input birth-date-input form-group ">
+                      <label for="inputsex">Selecciona tu genero</label>
+                      <span></span>
+                      <select id="inputsex" name="sex" class="form-control" required>
+                      <option value="">Género</option>
+                      <option value="Gay">Gay</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <M></M>
+                      </select>
+                    </div>
+
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="inputage">Edad</label>
+                        <span></span>
+                        <select id="inputage" name="age" class="form-control" required>
+                        <option value="">Selecciona tu edad</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                        <option value="60">60</option>
+                        <option value="61">61</option>
+                        <option value="62">62</option>
+                        <option value="63">63</option>
+                        <option value="64">64</option>
+                        <option value="65">65</option>
+                        <option value="66">66</option>
+                        <option value="67">67</option>
+                        <option value="68">68</option>
+                        <option value="69">69</option>
+                        <option value="70">70</option>
+                        <option value="71">71</option>
+                        <option value="72">72</option>
+                        <option value="73">73</option>
+                        <option value="74">74</option>
+                        <option value="75">75</option>
+                        <option value="76">76</option>
+                        <option value="77">77</option>
+                        <option value="78">78</option>
+                        <option value="79">79</option>
+                        <option value="80">80</option>
+                        <option value="81">81</option>
+                        <option value="82">82</option>
+                        <option value="83">83</option>
+                        <option value="84">84</option>
+                        <option value="85">85</option>
+                        <option value="86">86</option>
+                        <option value="87">87</option>
+                        <option value="88">88</option>
+                        <option value="89">89</option>
+                        <option value="90">90</option>
+                        <option value="91">91</option>
+                        <option value="92">92</option>
+                        <option value="93">93</option>
+                        <option value="94">94</option>
+                        <option value="95">95</option>
+                        <option value="96">96</option>
+                        <option value="97">97</option>
+                        <option value="98">98</option>
+                        <option value="99">99</option>
+                        <option value="100">100</option>
+                        <option value="101">101</option>
+                        <option value="102">102</option>
+                        <option value="103">103</option>
+                        <option value="104">104</option>
+                        <option value="105">105</option>
+                        <option value="106">106</option>
+                        <option value="107">107</option>
+                        <option value="108">108</option>
+                        <option value="109">109</option>
+                        <option value="110">110</option>
+
+                        <M></M>
+                        </select>
+                      </div>
+                      
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="inputCivil">Selecciona tu estado civil</label>
+                        <span></span>
+                        <select id="inputcivil" name="civil" class="form-control" required>
+                        <option value="">Estado Civil</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Viudo">Viudo</option>
+                        <option value="Divorciado">Divorciado</option>
+                        <option value="Separado">Separado</option>
+                        <option value="Soltero">Soltero</option>
+                        <M></M>
+                        </select>
+                      </div>
+  
+
+                      <div class="row">
+                        <div class="col-sm-6 p-sm-0">
+                          <div class="form-group">
+                            <label for="inputaddress">Dirección de residencia</label>
+                            <input type="text" name="address" placeholder="e.g. Col. Tezcal" class="form-control" id="inputaddress"  minlength="10" maxlength="40" required>
+                          </div>
+                        </div>
+                      <!--Nacionalidad de usuario -->
+                      <div class="col-sm-6 p-sm-0">
+                          <div class="form-group">
+                            <label for="inputrescity">Ciudad de residencia</label>
+                            <input type="text" name="rescity" placeholder="e.g. Cuernavaca" class="form-control" id="inputrescity" minlength="10" maxlength="40" required>
+                          </div>
+                        </div>
+                      
+
+                      <div class="col-sm-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="inputpostalcode">Código postal</label>
+                          <input type="number" name="postalcode" placeholder="99999" class="form-control" id="postalcode" max="5" required>
+                        </div>
+                      </div>
+
+                      <!--Nacionalidad de usuario -->
+                      <div class="col-sm-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="inputentifede">Entidad Federativa</label>
+                          <input type="text" name="entfederativa" placeholder="e.g. Morelos" class="form-control" id="inputentifede" minlength="10" maxlength="40" required>
+                        </div>
+                      </div>
+                    
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="inputCivil">Nivel Socioeconomico</label>
+                        <span></span>
+                        <select id="inputcivil" name="civil" class="form-control" required>
+                        <option value="">Nivel</option>
+                        <option value="Casado">Alta</option>
+                        <option value="Viudo">Media-Alta</option>
+                        <option value="Divorciado">Media</option>
+                        <option value="Separado">Media-Baja</option>
+                        <option value="Soltero">Baja</option>
+                        <M></M>
+                        </select>
+                      </div>
+
                   </div>
+
+                  <!--
                   <div class="form-group pass-group">
                     <label for="inputPass">Contraseña</label>
                     <input type="password" id="inputPass" name="password" class="form-control" placeholder="Mas de 8 caracteres" required oninput="updateProgressBar()">
@@ -189,18 +378,8 @@
                       Minimo de longitud 8 caracteres y con contenido de al menos un numero, mayuscula, minuscula y caracter especial.
                     </p>
                   </div>
-                  
-                  <div class="form-group check-gender">
-                    <div class="custom-radio">
-                      <input type="radio" name="gender" class="custom-control-input" id="Gmale" required>
-                      <label class="custom-control-label" for="Gmale">Hombre</label>
-                    </div>
-                    <div class="custom-radio">
-                      <input type="radio" name="gender" class="custom-control-input" id="Gfemale" required>
-                      <label class="custom-control-label" for="Gfemale">Mujer</label>
-                    </div>
-                  </div>
-                  <button class="btn"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
+                  -->
+                  <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
                 </form>
               </div>
             </div>
@@ -211,7 +390,7 @@
         <div class="steps">
           <div class="step complete-step">
             <span>1</span>
-            <p>Verificación de Correo Electrónico</p>
+            <p>Verificación de Cuenta</p>
           </div>
           <div class="step complete-step">
             <span>2</span>
@@ -221,19 +400,15 @@
             <span>3</span>
             <p>Datos de encuestado</p>
           </div>
-          <div class="step">
-            <span>4</span>
-            <p>Datos de </p>
-          </div>
-          <div class="step">
-            <span>5</span>
-            <p>Datos de </p>
-          </div>
         </div>
       </div>
     </div>
 
-
+    <audio id="audio" loop>
+      <source src="../../HTML/assets/audio/Red Sun in the Sky Sub Español.mp3" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -246,6 +421,8 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
+    <script src="../../HTML/assets/js/encuesta_socioeconomica.js"></script>
+    <!--<script src="../../HTML/assets/js/audio.js"></script>-->
 
   </body>
 </html>
