@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>información personal</title>
+    <title>Información personal</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -331,7 +331,7 @@
                       <div class="col-sm-6 p-sm-0">
                         <div class="form-group">
                           <label for="inputpostalcode">Código postal</label>
-                          <input type="number" name="postalcode" placeholder="99999" class="form-control" id="postalcode" max="5" required>
+                          <input type="tel" name="postalcode" placeholder="99999" class="form-control" id="postalcode" maxlength="5" minlength="5" required>
                         </div>
                       </div>
 
@@ -339,22 +339,77 @@
                       <div class="col-sm-6 p-sm-0">
                         <div class="form-group">
                           <label for="inputentifede">Entidad Federativa</label>
-                          <input type="text" name="entfederativa" placeholder="e.g. Morelos" class="form-control" id="inputentifede" minlength="10" maxlength="40" required>
+                          <input type="text" name="entfederativa" placeholder="e.g. Morelos" class="form-control" id="inputentifede" minlength="5" maxlength="30" required>
                         </div>
                       </div>
                     
                       <div class="select-input birth-date-input form-group ">
-                        <label for="inputCivil">Nivel Socioeconomico</label>
+                        <label for="inputsocioeconomico">Nivel Socioeconomico</label>
                         <span></span>
-                        <select id="inputcivil" name="civil" class="form-control" required>
-                        <option value="">Nivel</option>
-                        <option value="Casado">Alta</option>
-                        <option value="Viudo">Media-Alta</option>
-                        <option value="Divorciado">Media</option>
-                        <option value="Separado">Media-Baja</option>
-                        <option value="Soltero">Baja</option>
+                        <select id="inputsocioeconomico" name="socioeconomico" class="form-control" required>
+                        <option value="">Nivel Economico</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media-Alta">Media-Alta</option>
+                        <option value="Media">Media</option>
+                        <option value="Media-Baja">Media-Baja</option>
+                        <option value="Baja">Baja</option>
                         <M></M>
                         </select>
+                      </div>
+
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="inputedu">Grado de Estudios a aspirar</label>
+                        <span></span>
+                        <select id="inputedu" name="educativo" class="form-control" required>
+                        <option value="">Nivel Educativo</option>
+                        <option value="Licenciatura">Licenciatura</option>
+                        <option value="Maestría">Maestría</option>
+                        <option value="Doctorado">Doctorado</option>
+                        <option value="Posgrado">Posgrado</option>
+                        <M></M>
+                        </select>
+                      </div>
+
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="inputestpadre">Grado de estudios de padre</label>
+                        <span></span>
+                        <select id="inputestpadre" name="estpadre" class="form-control" required>
+                        <option value="">Nivel Educativo de Padre</option>
+                        <option value="Inexistente">Prefiero no responder</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                        <option value="Licenciatura en curso">Licenciatura en curso</option>
+                        <option value="Licenciatura">Licenciatura</option>
+                        <option value="Maestría">Maestría</option>
+                        <option value="Doctorado">Doctorado</option>
+                        <M></M>
+                        </select>
+                      </div>
+
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="inputestmadre">Grado de estudios de madre</label>
+                        <span></span>
+                        <select id="inputestmadre" name="estmadre" class="form-control" required>
+                        <option value="">Nivel Educativo de Madre</option>
+                        <option value="Inexistente">Prefiero no responder</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                        <option value="Licenciatura en curso">Licenciatura en curso</option>
+                        <option value="Licenciatura">Licenciatura</option>
+                        <option value="Maestría">Maestría</option>
+                        <option value="Doctorado">Doctorado</option>
+                        <M></M>
+                        </select>
+                      </div>
+
+                      <!--Nacionalidad de usuario -->
+                      <div class="col-sm-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="inputidioma">Idioma</label>
+                          <input type="text" name="idioma" placeholder="e.g. Español" class="form-control" id="inputidioma" minlength="5" maxlength="20" required>
+                        </div>
                       </div>
 
                   </div>
@@ -422,7 +477,7 @@
 
     <script src="assets/js/custom.js"></script>
     <script src="../../HTML/assets/js/encuesta_socioeconomica.js"></script>
-    <!--<script src="../../HTML/assets/js/audio.js"></script>-->
+    <script src="../../HTML/assets/js/audio.js"></script>
 
   </body>
 </html>
