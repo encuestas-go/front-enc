@@ -55,28 +55,40 @@
                 <h3> Información personal</h3>
                 <form action="#" class="job-application-form" id="commentForm1">
                   <div class="form-group">
-                    <input type="text" name="name" class="form-control" id="user_name" required>
-                    <label for="input-text">Nombre de Usuario</label>
+                    <input type="text" name="name" class="form-control" id="name" required>
+                    <label for="input-text">Nombre completo</label>
                   </div>
                   <div class="form-group">
-                    <input type="text" name="last_name" class="form-control" id="user_lastname" required>
-                    <label for="input-text">Apellido de Usuario</label>
+                    <input type="text" name="last_name" class="form-control" id="mid_name" required>
+                    <label for="input-text">Apellido materno</label>
                   </div>
                   <div class="form-group">
-                    <input type="email" name="email" class="form-control" id="user_email" required>
-                    <label for="input-mail">Correo Electronico</label>
+                    <input type="text" name="last_name" class="form-control" id="last_name" required>
+                    <label for="input-text">Apellido paterno</label>
                   </div>
                   <div class="form-group">
-                    <input type="tel" name="phone" class="form-control" id="user_phone" maxlength="15"  minlength="10" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-                    <label for="input-pass">Numero de Telefono</label>
+                    <input type="email" name="email" class="form-control" id="email" required>
+                    <label for="input-mail">Correo Electrónico</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" name="phone" class="form-control" id="phone" maxlength="15"  minlength="10" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <label for="input-pass">Número de Teléfono</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="last_name" class="form-control" id="username" required>
+                    <label for="input-text">Nombre de usuario</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="last_name" class="form-control" id="password" required>
+                    <label for="input-text">Contraseña</label>
                   </div>
                   
                     <div class="form-group check-gender center">
                       <span class="lebel-text">Tipo de usuario</span>
                         <select name="tipo_usuario" id="type_user" required>
-                          <option value="Usuario">Usuario</option>
-                          <option value="Encuestador">Encuestador</option>
-                          <option value="Administrador">Administrador</option>
+                          <option value="2">Usuario</option>
+                          <option value="3">Encuestador</option>
+                          <option value="1">Administrador</option>
                         </select>
                     </div>
                 <button class="btn" type="submit">Subir Información</button>
@@ -109,6 +121,8 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/crear_usuario.js"></script>
+
+    <script src="assets/js/create-user.js"></script>
+
   </body>
 </html>
