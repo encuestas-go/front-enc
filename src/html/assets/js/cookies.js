@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+const idUserCookieName = 'id_user';
+const idTypeUserCookieName = 'id_type_user';
+
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -20,4 +22,8 @@ function getCookie(cname) {
       }
     }
     return "";
+}
+
+function deleteCookie(name) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
