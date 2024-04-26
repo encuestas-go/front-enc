@@ -28,7 +28,7 @@ function resetPasswordRequest(email) {
             return;
         }
         
-        window.location.href = 'forget.html';
+        window.location.href = 'complete-reset-password.html';
     }) 
     .catch(error => {
         console.error('Error:', error);
