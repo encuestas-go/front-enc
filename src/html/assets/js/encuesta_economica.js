@@ -7,48 +7,63 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", function(event) {
         event.preventDefault(); // Prevenir el envío del formulario
   
-        // Obtener los datos del formulario
-        let formData = new FormData(form);
-        let allFieldsFilled = true; // Variable para rastrear si todos los campos están llenos
-  
-        // Verificar si algún campo está vacío
-        formData.forEach(function(value, key) {
-            if (value.trim() === "") { // Si el valor del campo está vacío después de eliminar espacios en blanco
-                allFieldsFilled = false;
-                alert("El campo: " + key + " no ha sido completado, por favor completa todos los campos.");
-                return; // Salir del bucle forEach tan pronto como se encuentre un campo vacío
+            let user_id = getCookie('id_user');
+            let job_situation = document.getElementById('jobsituation').value;
+            let job = document.getElementById('job').value;
+            let place_job = document.getElementById('placejob').value;
+            let type_job = document.getElementById('typejob').value;
+            let salary = document.getElementById('salary').value;
+            let type_salary = document.getElementById('typesalary').value;
+            let work_benefits = [];
+
+            // Selecciona todos los checkboxes por su clase
+            let checkboxes = document.querySelectorAll('.form-check-input');
+            
+            // Itera sobre cada checkbox
+            checkboxes.forEach(function(checkbox) {
+                // Verifica si está marcado
+                if (checkbox.checked) {
+                    // Si está marcado, agrega su valor a la lista
+                    work_benefits.push(checkbox.value);
+                }
+            });
+
+            console.log(user_id, job_situation, job, place_job, type_job, salary, type_salary, work_benefits);
+            //encuesta_eco_request(user_id, job_situation, job, place_job, type_job, salary, type_salary, work_benefits.value)
+
+          });
+
+          function encuesta_eco_request(user_id, job_situation, job, place_job, type_job, salary, type_salary, work_benefits){
+
+            fetch('http://localhost:3000/api/v1/crear/nivelEconomico',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id_user: user_id,
+                current_status: job_situation,
+                job_title: job,
+                employer_establishment: place_job,
+                employment_type: type_job,
+                salary: salary,
+                amount_type: type_salary,
+                work_benefits_type: work_benefits
+            })
+        })
+        .then(response => response.json()) 
+        .then(data => {
+            console.log(data);
+            if (data.status_code && data.status_code != 201) {
+                alert('No se lleno la encuesta correctamente');
+                return;
             }
-        });
-
-        // Obtener los valores de los checkboxes
-        let prestacionesValues = [];
-        let checkboxes = document.querySelectorAll('.select-input.birth-date-input.form-group input[type="checkbox"]:checked');
-        checkboxes.forEach(function(checkbox) {
-            let id = checkbox.id;
-            let label = checkbox.nextElementSibling.textContent;
-            prestacionesValues.push({ id: id, label: label });
-        });
-  
-        // Si todos los campos están llenos, continuar con el envío del formulario
-        if (allFieldsFilled) {
-            // Construir el mensaje de alerta con los datos del formulario
-            let message = "Información Personal:\n";
-            formData.forEach(function(value, key) {
-                message += key.charAt(0).toUpperCase() + key.slice(1) + ": " + value + "\n";
-            });
-
-            // Agregar los valores de los checkboxes al mensaje de alerta
-            message += "\nTipos de Prestaciones Seleccionados:\n";
-            prestacionesValues.forEach(function(option) {
-                message += option.label.trim() + "\n";
-            });
-  
-            // Mostrar la alerta con los datos del formulario
-            console.log(message);
-            alert(message);
-  
-            // Redirigir al usuario
-            window.location.href = "../../HTML/index.html";
-          }
-    });
+            window.location.href = 'complete.html';
+        }) 
+        .catch(error => {
+            console.error('Error:', error);
+            // TODO: change to modal
+            alert('Error al crear la encuesta');
+        }); 
+    }
 });
