@@ -36,7 +36,6 @@
       <div class="ugf-content-block">
         <div class="logo">
           <a href="../../HTML/index.html">
-            <!-- <img class="light-logo" src="assets/images/logo.png" alt=""> -->
             <img class="" src="../../HTML/assets/images/logos/logo_upemor.jpg" alt="" height="70px" width="70px">
           </a>
         </div>
@@ -45,114 +44,105 @@
             <div class="col-lg-7 offset-lg-5 p-sm-0">
               <div class="ugf-content pt150">
                 <a href="account-category.html" class="prev-page">Volver a la anterior etapa</a>
-                <h2>Datos personales e información economica</h2>
-                <p>Introduzca su información personal de identidad e información de situación economica para avanzar al siguiente paso, toda la información se trata de forma segura y confidencial bajo los terminos y condiciones. </p>
+                <h2>Datos personales e información demográfica</h2>
+                <p>Introduzca su información personal de identidad e información demográfica para avanzar al siguiente paso. Toda la información se trata de forma segura y confidencial bajo los terminos y condiciones. </p>
                 <form class="account-form" id="commentForm">
                   <div class="row">
-                  
-                    <div class="select-input birth-date-input form-group ">
-                      <label for="actualsituation">Situación actual</label>
-                      <span></span>
-                      <select id="jobsituation" name="jobsituation" class="form-control" required>
-                      <option value="">Situación</option>
-                      <option value="Empleado">Empleado</option>
-                      <option value="Desempleado">Desempleado</option>
-                      <option value="Estudiante">Estudiante</option>
-                      <option value="Busca de trabajo">Busca de trabajo</option>
-                      <option value="Becario">Becario</option>
-                      <M></M>
-                      </select>
-                    </div>
-
-                    <!--Nacionalidad de usuario -->
-                    <div class="col-sm-6 p-sm-0">
-                      <div class="form-group">
-                        <label for="inputjob">Nombre del puesto/trabajo actual o futuro</label>
-                        <input type="text" name="job" placeholder="e.g. Programador" class="form-control" id="job" minlength="5" maxlength="30" required>
-                      </div>
-                    </div>
-
-                    <!--Nacionalidad de usuario -->
-                    <div class="col-sm-6 p-sm-0">
-                      <div class="form-group">
-                        <label for="inputplacejob">Empresa o establecimiento</label>
-                        <input type="text" name="placejob" placeholder="e.g. Coca Cola" class="form-control" id="placejob" minlength="5" maxlength="30" required>
-                      </div>
-                    </div>
-                      
-                      <div class="select-input birth-date-input form-group ">
-                        <label for="typejob">Tipo de empleo actual o deseado a futuro</label>
+                    <div class="select-input house-condition-input form-group text-center">
+                        <label for="housingtype">Tipo de vivienda</label>
                         <span></span>
-                        <select id="typejob" name="typejob" class="form-control" required>
-                        <option value="">Tipo de empleo</option>
-                        <option value="Tiempo completo">Tiempo completo</option>
-                        <option value="Medio tiempo">Medio tiempo</option>
-                        <option value="Contrato temporal">Contrato temporal</option>
-                        <option value="Negocio propio">Negocio propio</option>
-                        <M></M>
+                        <select id="housingtype" name="housingtype" class="form-control" required>
+                            <option value="Casa">Casa</option>
+                            <option value="Departamento">Departamento</option>
+                            <option value="Cuarto">Cuarto</option>
+                            <option value="Vecindad">Vecindad</option>
+                            <option value="Otro">Otro</option>
+                            <M></M>
                         </select>
-                      </div>
-  
-
-                      <div class="row">
-                        <div class="col-sm-6 p-sm-0">
-                          <div class="form-group">
-                            <label for="inputsalary">Ingresos deseados</label>
-                            <input type="number" name="salary" placeholder="e.g. 8000" class="form-control" id="salary" required>
-                          </div>
-                        </div>
-                    
-                      <div class="select-input birth-date-input form-group ">
-                        <label for="typesalary">Tipo de Monto</label>
+                    </div>
+            
+                    <div class="select-input house-condition-input form-group text-center ">
+                        <label for="housecondition">Tipo de condición del lugar donde se habita</label>
                         <span></span>
-                        <select id="typesalary" name="typesalary" class="form-control" required>
-                        <option value="">Monto</option>
-                        <option value="Dia">Dia</option>
-                        <option value="Semanal">Semanal</option>
-                        <option value="Quincenal">Quincenal</option>
-                        <option value="Mensual">Mensual</option>
-                        <M></M>
+                        <select id="housecondition" name="housecondition" class="form-control" required>
+                            <option value="Renta">Renta</option>
+                            <option value="Propia">Propio</option>
+                            <option value="Prestado">Prestado</option>
+                            <option value="Otro">Otro</option>
+                            <M></M>
                         </select>
-                      </div>
-
-                      <div class="select-input birth-date-input form-group ">
-                        <label for="typeinsurance">Tipo de prestaciones</label>
-                        
-                        <hr class="my-4">
-
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="PTU" required>
-                          <label class="form-check-label" for="PTU">Participación de Utilidades</label>
-                        </div>
+                    </div>
+                </div>
               
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="IMSS/ISSSTE">
-                          <label class="form-check-label" for="IMSS/ISSSTE">IMSS/ISSSTE</label>
-                        </div>
-
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="SAR">
-                          <label class="form-check-label" for="SAR">SAR</label>
-                        </div>
-
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="SegPriv">
-                          <label class="form-check-label" for="SegPriv">Segurdo Medico Particular</label>
-                        </div>
-
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="SegPub">
-                          <label class="form-check-label" for="SegPub">Seguro Medico</label>
-                        </div>
-
-                        <hr class="my-4">
-
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="select-input owntransport-input form-group text-center">
+                              <label for="owntransport">Transporte propio</label>
+                              <span></span>
+                              <select id="owntransport" name="owntransport" class="form-control" required>
+                                  <option value="Si">Si</option>
+                                  <option value="No">No</option>
+                                  <M></M>
+                              </select>
+                          </div>
                       </div>
-
+              
+                      <div class="col-md-6">
+                          <div class="select-input incomeamount-input form-group text-center">
+                              <label for="incomeamount">Ingresos totales mensuales de la familia</label>
+                              <span></span>
+                              <select id="incomeamount" name="incomeamount" class="form-control" required>
+                                  <option value="Menos">Menos de $1,000</option>
+                                  <option value="Entre1">Entre $1,000 - $5,500</option>
+                                  <option value="Entre2">Entre $5,500 - $9,500</option>
+                                  <option value="Entre3">Entre $9,500 - $20,000</option>
+                                  <option value="Mas">Más de $20,000</option>
+                                  <M></M>
+                              </select>
+                          </div>
+                      </div>
                   </div>
-
+              
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group text-center">
+                              <label for="workingmembers">Integrantes mayores que trabajan dentro de la familia</label>
+                              <input type="number" name="workingmembers" placeholder="e.g. 1, 2..." class="form-control" id="workingmembers" required min="0">
+                          </div>
+                      </div>
+              
+                      <div class="col-md-6">
+                          <div class="form-group text-center">
+                              <label for="underage">Integrantes menores de edad dentro de la familia</label>
+                              <input type="number" name="underage" placeholder="e.g. 1, 2..." class="form-control" id="underage" required min="0">
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group text-center">
+                              <label for="monthlyexpenses">Monto de gastos en despensa mensual</label>
+                              <input type="number" name="monthlyexpenses" placeholder="e.g. 1000, 1500..." class="form-control" id="monthlyexpenses" required min="0">
+                          </div>
+                      </div>
+              
+                      <div class="col-md-6">
+                          <div class="select-input govermentsupport-input form-group text-center">
+                              <label for="govermentsupport">Apoyos de gobierno(becas,programas,etc.)</label>
+                              <span></span>
+                              <select id="govermentsupport" name="govermentsupport" class="form-control" required>
+                                  <option value="Si">Si</option>
+                                  <option value="No">No</option>
+                                  <M></M>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+              
                   <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
-                </form>
+              </form>
+              
               </div>
             </div>
           </div>
@@ -170,7 +160,7 @@
           </div>
           <div class="step step-onprocess">
             <span>3</span>
-            <p>Datos de encuestado</p>
+            <p>Datos del encuestado</p>
           </div>
         </div>
       </div>
@@ -187,7 +177,7 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/encuesta_economica.js"></script>
+    <script src="../../HTML/assets/js/encuesta_demografica.js"></script>
     <script src="../../HTML/assets/js/cookies.js"></script>
     <script src="../../Anfra_v2.1_main/login-register-1/assets/js/validator.js"></script>
 
