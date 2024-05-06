@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
+        console.log("hola");
+
         let email = document.getElementById('inputMail');
         let pass = document.getElementById('inputPass');
 
@@ -18,9 +20,10 @@ function loginRequest(email, password) {
             'Content-Type': 'application/json', 
         },
         body: JSON.stringify({
-            email: email, 
+            email: email,   
             password: password
-        })
+        }),
+        credentials: 'include' // Asegúrate de incluir esto para recibir cookies
     })
     .then(response => response.json()) 
     .then(data => {
@@ -30,9 +33,10 @@ function loginRequest(email, password) {
             return;
         }
         
-        setCookie('id_user', data.id_user, 1);
-        setCookie('id_type_user', data.id_type_user);
-        window.location.href = '../../HTML/index.html'
+        // setCookie('id_user', data.id_user, 1);
+        // setCookie('id_type_user', data.id_type_user);
+        window.location.href = '../../html/index.html'
+
     }) 
     .catch(error => {
         console.error('Error:', error);
