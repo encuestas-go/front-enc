@@ -1,0 +1,11 @@
+.label-c {
+    display: block;
+    font:
+    1rem 'Fira Sans',
+    sans-serif;
+}
+  
+.input-c,
+.label-c {
+    margin: 0.4rem 0;
+}
