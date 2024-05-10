@@ -54,12 +54,12 @@
   
                     <div class="my-3">
                       <div class="form-check">
-                        <input id="Silight" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
-                        <label class="form-check-label" for="Si">Sí</label>
+                        <input id="Silight" name="light" value="Si" type="radio" class="form-check-input" checked required>
+                        <label class="form-check-label" for="light">Sí</label>
                       </div>
                       <div class="form-check">
-                        <input id="NoLight" name="publicpoint" value="No" type="radio" class="form-check-input" required>
-                        <label class="form-check-label" for="No">No</label>
+                        <input id="NoLight" name="light" value="No" type="radio" class="form-check-input" required>
+                        <label class="form-check-label" for="light">No</label>
                       </div>
                     </div>
 
@@ -67,12 +67,12 @@
   
                         <div class="my-3">
                           <div class="form-check">
-                            <input id="Siwater" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
-                            <label class="form-check-label" for="Si">Sí</label>
+                            <input id="Siwater" name="water" value="Si" type="radio" class="form-check-input" checked required>
+                            <label class="form-check-label" for="water">Sí</label>
                           </div>
                           <div class="form-check">
-                            <input id="Nowater" name="publicpoint" value="No" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="No">No</label>
+                            <input id="Nowater" name="water" value="No" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="water">No</label>
                           </div>
                         </div>
                     
@@ -94,12 +94,12 @@
   
                     <div class="my-3">
                       <div class="form-check">
-                        <input id="Siphone" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
-                        <label class="form-check-label" for="Si">Sí</label>
+                        <input id="Siphone" name="phone" value="Si" type="radio" class="form-check-input" checked required>
+                        <label class="form-check-label" for="phone">Sí</label>
                       </div>
                       <div class="form-check">
-                        <input id="Nophone" name="publicpoint" value="No" type="radio" class="form-check-input" required>
-                        <label class="form-check-label" for="No">No</label>
+                        <input id="Nophone" name="phone" value="No" type="radio" class="form-check-input" required>
+                        <label class="form-check-label" for="phone">No</label>
                       </div>
                     </div>
                     
@@ -107,12 +107,12 @@
   
                         <div class="my-3">
                           <div class="form-check">
-                            <input id="Sitv" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
-                            <label class="form-check-label" for="Si">Sí</label>
+                            <input id="Sitv" name="tv" value="Si" type="radio" class="form-check-input" checked required>
+                            <label class="form-check-label" for="tv">Sí</label>
                           </div>
                           <div class="form-check">
-                            <input id="Notv" name="publicpoint" value="No" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="No">No</label>
+                            <input id="Notv" name="tv" value="No" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="tv">No</label>
                           </div>
                         </div>
 
@@ -152,16 +152,18 @@
                               <label class="form-check-label" for="checkother">Otros</label>
                             </div>
                         </div>
-                            <hr class="my-4">
-
-                    <div class="row">
-                      <div class="col-sm-6 p-sm-0">
-                        <div class="form-group">
-                          <label for="costbasic">Monto de gastos en servicios básicos (Gas, Agua, Luz, ...)</label>
-                          <input type="number" name="costbasic" placeholder="e.g. 8000" class="form-control" id="costbasic" required>
+                        
+                        <hr class="my-4">
+                        
+                        <div class="row">
+                          <div class="p-sm-0">
+                            <div class="form-group">
+                              <label for="costbasic">Monto de gastos en servicios básicos (Gas, Agua, Luz, ...)</label>
+                              <input type="number" name="costbasic" placeholder="e.g. 8000" class="form-control" id="costbasic" required>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
+                    
 
                   
                   <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>

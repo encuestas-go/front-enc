@@ -48,11 +48,12 @@
                 <p>Introduzca su información relevante para el llenado de la encuesta de datos demográficos para avanzar al siguiente paso. Toda la información se trata de forma segura y confidencial bajo los terminos y condiciones. </p>
                 <form class="account-form" id="commentForm">
                   <div class="row">
-                    <div class="select-input house-condition-input form-group text-center">
+                    <div class="select-input house-condition-input form-group">
                         <label for="housingtype">Tipo de vivienda</label>
                         <span></span>
                         <select id="housingtype" name="housingtype" class="form-control" required>
-                            <option value="Casa">Casa</option>
+                          <option value="">Tipo de vivienda</option>  
+                          <option value="Casa">Casa</option>
                             <option value="Departamento">Departamento</option>
                             <option value="Cuarto">Cuarto</option>
                             <option value="Vecindad">Vecindad</option>
@@ -61,11 +62,12 @@
                         </select>
                     </div>
             
-                    <div class="select-input house-condition-input form-group text-center ">
+                    <div class="select-input house-condition-input form-group">
                         <label for="housecondition">Tipo de condición del lugar donde se habita</label>
                         <span></span>
                         <select id="housecondition" name="housecondition" class="form-control" required>
-                            <option value="Renta">Renta</option>
+                          <option value="">Tipo de condición</option>  
+                          <option value="Renta">Renta</option>
                             <option value="Propia">Propio</option>
                             <option value="Prestado">Prestado</option>
                             <option value="Otro">Otro</option>
@@ -76,11 +78,12 @@
               
                   <div class="row">
                       <div class="col-md-6">
-                          <div class="select-input owntransport-input form-group text-center">
+                          <div class="select-input owntransport-input form-group">
                               <label for="owntransport">Transporte propio</label>
                               <span></span>
                               <select id="owntransport" name="owntransport" class="form-control" required>
-                                  <option value="Si">Si</option>
+                                <option value="">Transporte propio</option>  
+                                <option value="Si">Si</option>
                                   <option value="No">No</option>
                                   <M></M>
                               </select>
@@ -88,11 +91,12 @@
                       </div>
               
                       <div class="col-md-6">
-                          <div class="select-input incomeamount-input form-group text-center">
+                          <div class="select-input incomeamount-input form-group">
                               <label for="incomeamount">Ingresos totales mensuales de la familia</label>
                               <span></span>
                               <select id="incomeamount" name="incomeamount" class="form-control" required>
-                                  <option value="Menos">Menos de $1,000</option>
+                                <option value="">Ingresos totales mensuales</option>  
+                                <option value="Menos">Menos de $1,000</option>
                                   <option value="Entre1">Entre $1,000 - $5,500</option>
                                   <option value="Entre2">Entre $5,500 - $9,500</option>
                                   <option value="Entre3">Entre $9,500 - $20,000</option>
@@ -105,14 +109,14 @@
               
                   <div class="row">
                       <div class="col-md-6">
-                          <div class="form-group text-center">
+                          <div class="form-group">
                               <label for="workingmembers">Integrantes mayores que trabajan dentro de la familia</label>
                               <input type="number" name="workingmembers" placeholder="e.g. 1, 2..." class="form-control" id="workingmembers" required min="0">
                           </div>
                       </div>
               
                       <div class="col-md-6">
-                          <div class="form-group text-center">
+                          <div class="form-group">
                               <label for="underage">Integrantes menores de edad dentro de la familia</label>
                               <input type="number" name="underage" placeholder="e.g. 1, 2..." class="form-control" id="underage" required min="0">
                           </div>
@@ -121,18 +125,19 @@
               
                   <div class="row">
                       <div class="col-md-6">
-                          <div class="form-group text-center">
+                          <div class="form-group">
                               <label for="monthlyexpenses">Monto de gastos en despensa mensual</label>
                               <input type="number" name="monthlyexpenses" placeholder="e.g. 1000, 1500..." class="form-control" id="monthlyexpenses" required min="0">
                           </div>
                       </div>
               
                       <div class="col-md-6">
-                          <div class="select-input govermentsupport-input form-group text-center">
+                          <div class="select-input govermentsupport-input form-group">
                               <label for="govermentsupport">Apoyos de gobierno(becas,programas,etc.)</label>
                               <span></span>
                               <select id="govermentsupport" name="govermentsupport" class="form-control" required>
-                                  <option value="Si">Si</option>
+                                <option value="">Apoyos de gobierno</option>  
+                                <option value="Si">Si</option>
                                   <option value="No">No</option>
                                   <M></M>
                               </select>
