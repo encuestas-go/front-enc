@@ -64,7 +64,6 @@
                       </select>
                     </div>
 
-                    <!--Nacionalidad de usuario -->
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputjob">Nombre del puesto/trabajo actual o futuro</label>
@@ -72,7 +71,6 @@
                       </div>
                     </div>
 
-                    <!--Nacionalidad de usuario -->
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputplacejob">Empresa o establecimiento</label>
@@ -80,8 +78,8 @@
                       </div>
                     </div>
                       
-                      <div class="select-input birth-date-input form-group ">
-                        <label for="typejob">Tipo de empleo actual o deseado a futuro</label>
+                    <div class="select-input birth-date-input form-group ">
+                      <label for="typejob">Tipo de empleo actual o deseado a futuro</label>
                         <span></span>
                         <select id="typejob" name="typejob" class="form-control" required>
                         <option value="">Tipo de empleo</option>
@@ -89,33 +87,35 @@
                         <option value="Medio tiempo">Medio tiempo</option>
                         <option value="Contrato temporal">Contrato temporal</option>
                         <option value="Negocio propio">Negocio propio</option>
+                        <option value="Horas">Por Horas</option>
                         <M></M>
-                        </select>
-                      </div>
-  
+                      </select>
+                    </div>
 
-                      <div class="row">
-                        <div class="col-sm-6 p-sm-0">
+                    <div class="row">
+                      <div class="col-sm-6 p-sm-0">
                           <div class="form-group">
-                            <label for="inputsalary">Ingresos deseados</label>
-                            <input type="number" name="salary" placeholder="e.g. 8000" class="form-control" id="salary" required>
+                              <label for="inputsalary">Salario / Expectativa Salarial</label>
+                              <input type="number" name="salary" placeholder="e.g. 8000" class="form-control" id="salary" required min="0">
                           </div>
-                        </div>
-                    
-                      <div class="select-input birth-date-input form-group ">
-                        <label for="typesalary">Tipo de Monto</label>
-                        <span></span>
-                        <select id="typesalary" name="typesalary" class="form-control" required>
-                        <option value="">Monto</option>
-                        <option value="Dia">Dia</option>
-                        <option value="Semanal">Semanal</option>
-                        <option value="Quincenal">Quincenal</option>
-                        <option value="Mensual">Mensual</option>
-                        <M></M>
-                        </select>
                       </div>
+                      <div class="col-sm-6 p-sm-0"> 
+                          <div class="select-input birth-date-input form-group">
+                              <label for="typesalary">Tipo de Monto</label>
+                              <span></span>
+                              <select id="typesalary" name="typesalary" class="form-control" required>
+                                  <option value="">Monto</option>
+                                  <option value="Dia">Dia</option>
+                                  <option value="Semanal">Semanal</option>
+                                  <option value="Quincenal">Quincenal</option>
+                                  <option value="Mensual">Mensual</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  
 
-                      <div class="select-input birth-date-input form-group ">
+                    <div class="select-input birth-date-input form-group ">
                         <label for="typeinsurance">Tipo de prestaciones</label>
                         
                         <hr class="my-4">
@@ -147,8 +147,7 @@
 
                         <hr class="my-4">
 
-                      </div>
-
+                    </div>
                   </div>
 
                   <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
