@@ -5,18 +5,13 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
+function getCookie(name) {
+  let cookieArray = document.cookie.split(';'); // Divide la cadena de cookies en un array
+  for(let i = 0; i < cookieArray.length; i++) {
+      let cookiePair = cookieArray[i].split('='); // Divide cada par nombre=valor
+      if(name == cookiePair[0].trim()) { // Elimina espacio en blanco y compara el nombre
+          return decodeURIComponent(cookiePair[1]); // Decodifica y retorna el valor de la cookie
       }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
+  }
+  return null; // Retorna null si no se encuentra la cookie
 }

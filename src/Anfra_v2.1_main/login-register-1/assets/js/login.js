@@ -33,10 +33,7 @@ function loginRequest(email, password) {
             return;
         }
         
-        // setCookie('id_user', data.id_user, 1);
-        // setCookie('id_type_user', data.id_type_user);
         window.location.href = '../../html/index.html'
-
     }) 
     .catch(error => {
         console.error('Error:', error);
