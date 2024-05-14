@@ -53,7 +53,7 @@
                     <div class="select-input birth-date-input form-group ">
                       <label for="actualsituation">Situación actual</label>
                       <span></span>
-                      <select id="jobsituation" name="jobsituation" class="form-control" required>
+                      <select id="inputjobsituation" name="jobsituation" class="form-control" required>
                       <option value="">Situación</option>
                       <option value="Empleado">Empleado</option>
                       <option value="Desempleado">Desempleado</option>
@@ -67,21 +67,21 @@
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputjob">Nombre del puesto/trabajo actual o futuro</label>
-                        <input type="text" name="job" placeholder="e.g. Programador" class="form-control" id="job" minlength="5" maxlength="100" required>
+                        <input type="text" name="job" placeholder="e.g. Programador" class="form-control" id="inputjobtitle" minlength="5" maxlength="100" required>
                       </div>
                     </div>
 
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group">
                         <label for="inputplacejob">Empresa o establecimiento</label>
-                        <input type="text" name="placejob" placeholder="e.g. Coca Cola" class="form-control" id="placejob" minlength="3" maxlength="100" required>
+                        <input type="text" name="placejob" placeholder="e.g. Coca Cola" class="form-control" id="inputplacejob" minlength="3" maxlength="100" required>
                       </div>
                     </div>
                       
                     <div class="select-input birth-date-input form-group ">
                       <label for="typejob">Tipo de empleo actual o deseado a futuro</label>
                         <span></span>
-                        <select id="typejob" name="typejob" class="form-control" required>
+                        <select id="inputtypejob" name="typejob" class="form-control" required>
                         <option value="">Tipo de empleo</option>
                         <option value="Tiempo completo">Tiempo completo</option>
                         <option value="Medio tiempo">Medio tiempo</option>
@@ -96,14 +96,14 @@
                       <div class="col-sm-6 p-sm-0">
                           <div class="form-group">
                               <label for="inputsalary">Salario / Expectativa Salarial</label>
-                              <input type="number" name="salary" placeholder="e.g. 8000" class="form-control" id="salary" required min="0">
+                              <input type="number" name="salary" placeholder="e.g. 8000" class="form-control" id="inputsalary" required min="0">
                           </div>
                       </div>
                       <div class="col-sm-6 p-sm-0"> 
                           <div class="select-input birth-date-input form-group">
                               <label for="typesalary">Tipo de Monto</label>
                               <span></span>
-                              <select id="typesalary" name="typesalary" class="form-control" required>
+                              <select id="inputtypesalary" name="typesalary" class="form-control" required>
                                   <option value="">Monto</option>
                                   <option value="Dia">Dia</option>
                                   <option value="Semanal">Semanal</option>
@@ -115,13 +115,13 @@
                   </div>
                   
 
-                    <div class="select-input birth-date-input form-group ">
+                    <div class="select-input benefits-input form-group ">
                         <label for="typeinsurance">Tipo de prestaciones</label>
                         
                         <hr class="my-4">
 
                         <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="PTU" required>
+                          <input type="checkbox" class="form-check-input" id="PDU" required>
                           <label class="form-check-label" for="PTU">Participación de Utilidades</label>
                         </div>
               
@@ -137,20 +137,19 @@
 
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="SegPriv">
-                          <label class="form-check-label" for="SegPriv">Segurdo Medico Particular</label>
+                          <label class="form-check-label" for="SegPriv">Segurado Medico Particular</label>
                         </div>
 
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="SegPub">
                           <label class="form-check-label" for="SegPub">Seguro Medico</label>
                         </div>
-
                         <hr class="my-4">
 
                     </div>
                   </div>
 
-                  <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
+                  <button id="submitBtn" class="btn" type="submit"><span>Enviar Encuesta</span> <i class=""></i></button>
                 </form>
               </div>
             </div>
@@ -186,9 +185,13 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/encuesta_economica.js"></script>
     <script src="../../HTML/assets/js/cookies.js"></script>
     <script src="../../Anfra_v2.1_main/login-register-1/assets/js/validator.js"></script>
+
+    <script src="assets/js/validator.js"></script> 
+    <script src="assets/js/utils.js"></script>
+
+    <script src="assets/js/encuesta_economica.js"></script>
 
   </body>
 </html>
