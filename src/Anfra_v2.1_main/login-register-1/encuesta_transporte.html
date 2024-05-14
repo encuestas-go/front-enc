@@ -101,28 +101,21 @@
                       </div>
                   </div>
               
-                  <hr class="my-4">
-              
-                  <b><h7 class="mb-3 ">¿Puntos de acceso de transporte publico en el lugar donde se reside?</h7></b>
-              
                   <div class="row">
-                      <div class="mx-auto">
-                          <div class="my-3">
-                              <div class="form-check">
-                                  <input id="Si" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
-                                  <label class="form-check-label" for="Si">Sí</label>
-                              </div>
-                              <div class="form-check">
-                                  <input id="No" name="publicpoint" value="No" type="radio" class="form-check-input" required>
-                                  <label class="form-check-label" for="No">No</label>
-                              </div>
-                          </div>
-                      </div>
+                    <div class="mx-auto">
+                        <div class="select-input birth-date-input form-group">
+                            <label for="accesspoint">¿Puntos de acceso de transporte publico en el lugar donde se reside?</label>
+                            <span></span>
+                            <select id="accesspoint" name="arrivetime" class="form-control" required>
+                                <option value="">Punto de acceso de transporte</option>
+                                <option value="true">Sí</option>
+                                <option value="false">No</option>
+                                <M></M>
+                            </select>
+                        </div>
+                    </div>
                   </div>
               
-                  <hr class="my-4">
-              
-                  <!--Nacionalidad de usuario -->
                   <div class="row">
                       <div class="mx-auto">
                           <div class="p-sm-0">
@@ -153,9 +146,7 @@
                       </div>
                   </div>
               
-                  <hr class="my-4">
-              
-                  <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
+                  <button id="submitBtn" class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
               </form>
               
               
@@ -199,10 +190,13 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/gestor_transporte.js"></script>
     <script src="../../HTML/assets/js/audio.js"></script>
     <script src="../../HTML/assets/js/cookies.js"></script>
     <script src="../../Anfra_v2.1_main/login-register-1/assets/js/validator.js"></script>
+
+    <script src="assets/js/utils.js"></script>
+
+    <script src="assets/js/encuesta_transporte.js"></script>
 
   </body>
 </html>
