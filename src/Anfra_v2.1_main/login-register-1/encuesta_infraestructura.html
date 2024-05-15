@@ -76,7 +76,7 @@
                     <div class="select-input birth-date-input form-group ">
                       <label for="statezone">Estado de la infraestructura del hogar</label>
                       <span></span>
-                      <select id="statezone" name="statezone" class="form-control" required>
+                      <select id="statehome" name="statezone" class="form-control" required>
                       <option value="">Estado de la infraestructura del hogar</option>
                       <option value="Buena">Buena</option>
                       <option value="Regular">Regular</option>
@@ -88,7 +88,7 @@
                     <div class="select-input birth-date-input form-group ">
                       <label for="statezone">Tipo de suelo en la habitación</label>
                       <span></span>
-                      <select id="statezone" name="statezone" class="form-control" required>
+                      <select id="statefloor" name="statezone" class="form-control" required>
                       <option value="">Tipo de suelo en la habitación</option>
                       <option value="Madera">Madera</option>
                       <option value="Céramica">Céramica</option>
@@ -102,7 +102,7 @@
                     <div class="select-input birth-date-input form-group ">
                       <label for="statezone">Tipo de techo</label>
                       <span></span>
-                      <select id="statezone" name="statezone" class="form-control" required>
+                      <select id="stateroof" name="statezone" class="form-control" required>
                       <option value="">Tipo de techo</option>
                       <option value="Adobe">Adobe</option>
                       <option value="Lámina">Lámina</option>
@@ -118,7 +118,7 @@
                     <div class="select-input birth-date-input form-group ">
                       <label for="statezone">Tipo de pared en habitación</label>
                       <span></span>
-                      <select id="statezone" name="statezone" class="form-control" required>
+                      <select id="statewall" name="statezone" class="form-control" required>
                       <option value="">Tipo de pared en habitación</option>
                       <option value="Ladrillo">Ladrillo</option>
                       <option value="Yeso">Yeso</option>
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="fan">
+                          <input type="checkbox" class="form-check-input" id="airconditioning">
                           <label class="form-check-label" for="fan">Ventilador</label>
                         </div>
 
@@ -208,11 +208,11 @@
   
                       <div class="my-3">
                         <div class="form-check">
-                          <input id="Si" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
+                          <input id="true" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
                           <label class="form-check-label" for="Si">Sí</label>
                         </div>
                         <div class="form-check">
-                          <input id="No" name="publicpoint" value="No" type="radio" class="form-check-input" required>
+                          <input id="false" name="publicpoint" value="No" type="radio" class="form-check-input" required>
                           <label class="form-check-label" for="No">No</label>
                         </div>
                       </div>
@@ -255,9 +255,13 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/encuesta_economica.js"></script>
     <script src="../../HTML/assets/js/cookies.js"></script>
-    <script src="../../Anfra_v2.1_main/login-register-1/assets/js/validator.js"></script>
+
+
+    <script src="assets/js/validator.js"></script> 
+    <script src="assets/js/utils.js"></script>
+
+    <script src="assets/js/encuesta_infraestructura.js"></script>
 
   </body>
 </html>

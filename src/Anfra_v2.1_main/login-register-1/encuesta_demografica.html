@@ -51,7 +51,7 @@
                     <div class="select-input house-condition-input form-group">
                         <label for="housingtype">Tipo de vivienda</label>
                         <span></span>
-                        <select id="housingtype" name="housingtype" class="form-control" required>
+                        <select id="inputhousingtype" name="housingtype" class="form-control" required>
                           <option value="">Tipo de vivienda</option>  
                           <option value="Casa">Casa</option>
                             <option value="Departamento">Departamento</option>
@@ -83,8 +83,8 @@
                               <span></span>
                               <select id="owntransport" name="owntransport" class="form-control" required>
                                 <option value="">Transporte propio</option>  
-                                <option value="Si">Si</option>
-                                  <option value="No">No</option>
+                                <option value="true">Si</option>
+                                  <option value="false">No</option>
                                   <M></M>
                               </select>
                           </div>
@@ -137,15 +137,15 @@
                               <span></span>
                               <select id="govermentsupport" name="govermentsupport" class="form-control" required>
                                 <option value="">Apoyos de gobierno</option>  
-                                <option value="Si">Si</option>
-                                  <option value="No">No</option>
+                                <option value="true">Si</option>
+                                  <option value="false">No</option>
                                   <M></M>
                               </select>
                           </div>
                       </div>
                   </div>
               
-                  <button class="btn" type="submit"><span>Continuar</span> <i class="las la-arrow-right"></i></button>
+                  <button id="submitBtn" class="btn" type="submit"><span>Enviar Encuesta</span> <i class=""></i></button>
               </form>
               
               </div>
@@ -182,9 +182,12 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/encuesta_demografica.js"></script>
-    <script src="../../HTML/assets/js/cookies.js"></script>
-    <script src="../../Anfra_v2.1_main/login-register-1/assets/js/validator.js"></script>
+    <script src="assets/js/cookies.js"></script> 
+
+   
+    <script src="assets/js/utils.js"></script>
+
+    <script src="assets/js/encuesta_demografica.js"></script>
 
   </body>
 </html>
