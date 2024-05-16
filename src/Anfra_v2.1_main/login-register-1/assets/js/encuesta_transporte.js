@@ -64,6 +64,11 @@ function updateTransportSurvey(){
     let url = new URL('http://localhost:3000/api/v1/actualizar/medioTransporte');
     let survey = getTransportData();
 
+    if (!areAllValuesValid(survey)) {
+        alert('Llena todos los valor en la encuesta');
+        return;
+    }
+
     fetch(url, {
         method: 'PUT', 
         headers: {

@@ -23,11 +23,11 @@ function convertToInteger(value) {
 function convertToFloat(value) {
     if (value === null) {
         return null; 
-      }
+    }
 
-    const number = parseFloat(value);
-    if (!isNaN(number)) {
-        return number;
+    const val = parseFloat(value.toString());
+    if (!isNaN(val)) {
+        return val;
     } else {
         throw new Error('The string cannot be converted to a float.');
     }

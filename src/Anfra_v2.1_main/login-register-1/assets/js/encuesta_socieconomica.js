@@ -174,6 +174,11 @@ function updateSocioeconomicSurvey() {
     let url = new URL('http://localhost:3000/api/v1/actualizar/nivelSocioeconomico');
     let survey = getSocieconomicData();
 
+    if (!areAllValuesValid(survey)) {
+        alert('Llena todos los valor en la encuesta');
+        return;
+    }
+
     fetch(url, {
         method: 'PUT', 
         headers: {

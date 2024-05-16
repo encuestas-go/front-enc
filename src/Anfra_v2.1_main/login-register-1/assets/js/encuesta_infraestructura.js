@@ -65,24 +65,19 @@ function getHouseInfrastructureData() {
     const selectedEquipment = idsEquipment.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
-    })
-    .join(',');
-
+    }).join(',');
 
     const idsServices = ['electricity', 'water', 'gas', 'calefaction'];
     const selectedServices = idsServices.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
-    })
-    .join(',');
+    }).join(',');
 
 
     //Belongs to other_properties, remove in case that is not correct
@@ -126,13 +121,12 @@ function fillSurveyFormIfExist(userDetails) {
     document.getElementById('statewall').value = userDetails.wall_type;
     document.getElementById('familynum').value = userDetails.total_members;
     document.getElementById('roomnum').value = userDetails.total_rooms;
-    //document.getElementById('').value = userDetails.other_properties.toString();
 
     const checkboxEquipment = {
-        'TV': 'tv',
-        'Fridge': 'fridge',
-        'Washer': 'washer',
-        'Air': 'airconditioning',
+        'Televisión': 'tv',
+        'Refrigerador': 'fridge',
+        'Lavadora': 'washer',
+        'Ventilador': 'airconditioning',
     };
 
     if (userDetails.household_equipment) {
@@ -150,10 +144,10 @@ function fillSurveyFormIfExist(userDetails) {
     }
 
     const checkboxServices = {
-        'TV': 'electricity',
-        'Water': 'water',
+        'Electricidad': 'electricity',
+        'Agua': 'water',
         'Gas': 'gas',
-        'Calefaction': 'calefaction',
+        'Calefacción': 'calefaction',
     };
 
     if (userDetails.basic_services) {
@@ -169,6 +163,14 @@ function fillSurveyFormIfExist(userDetails) {
             }
         });
     }
+
+
+    if (userDetails.other_properties) {
+        document.querySelector('input[name="publicpoint"][value="Si"]').checked = true;
+    } else {
+        document.querySelector('input[name="publicpoint"][value="No"]').checked = true;
+    }
+
 }
 
 function fetchSurveyData() {
@@ -217,7 +219,7 @@ function fetchSurveyData() {
             wall_type:  user.wall_type,
             total_members: user.total_members ,
             total_rooms: user.total_rooms,
-            household_equipment:  user.household_equipment,
+            household_equipment: user.household_equipment,
             basic_services: user.basic_services,
             other_properties: user.other_properties
         };
@@ -235,6 +237,11 @@ function fetchSurveyData() {
 function updateHouseInfrastructureSurvey() {
     let url = new URL('http://localhost:3000/api/v1/actualizar/InfraestructuraCasa');
     let survey = getHouseInfrastructureData();
+
+    if (!areAllValuesValid(survey)) {
+        alert('Llena todos los campos de la encuesta');
+        return;
+    }
 
     fetch(url, {
         method: 'PUT', 

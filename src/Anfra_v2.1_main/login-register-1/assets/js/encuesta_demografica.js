@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function createNewDemographicSurvey() {
     let url = new URL('http://localhost:3000/api/v1/crear/nivelDemografico');
     let survey = getDemographicData();
+    console.log(survey);
     
     if (!areAllValuesValid(survey)) {
         alert('Llena todos los valor en la encuesta');
@@ -60,7 +61,7 @@ function getDemographicData() {
     return{
         "user_id": convertToInteger( getCookie('id_user') ),
         "housing_type": getHTMLValue('inputhousingtype') ,
-        "house_condition":getHTMLValue('housecondition')  ,
+        "house_condition": getHTMLValue('housecondition')  ,
         "own_transport": convertToBoolean(getHTMLValue('owntransport')),
         "income_amount": convertToFloat( getHTMLValue('incomeamount') ),
         "working_members" : convertToInteger( getHTMLValue('workingmembers') ) ,
@@ -74,15 +75,11 @@ function fillSurveyFormIfExist(userDetails) {
     document.getElementById('inputhousingtype').value = userDetails.housing_type;
     document.getElementById('housecondition').value = userDetails.house_condition;
     document.getElementById('owntransport').value = userDetails.own_transport.toString();
-    console.log(userDetails);
-
     document.getElementById('incomeamount').value = userDetails.income_amount;
     document.getElementById('workingmembers').value = userDetails.working_members;
     document.getElementById('underage').value = userDetails.members_underage;
-    console.log(userDetails);
-
     document.getElementById('monthlyexpenses').value = userDetails.monthly_expenses;
-    document.getElementById('goverment_support').value = userDetails.goverment_support.toString();
+    document.getElementById('govermentsupport').value = userDetails.goverment_support.toString();
 }
 
 

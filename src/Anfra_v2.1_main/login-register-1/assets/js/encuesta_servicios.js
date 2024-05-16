@@ -61,23 +61,21 @@ function getServiceData() {
     const selectedPayments = idsPayments.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
-    })
-    .join(',');
+    }).join(',');
 
     return{
-    "user_id,":convertToInteger( getCookie('id_user') ) ,
-	"energy_provider": document.querySelector('input[name="light"]:checked').value === "Si",
-    "water_provider": document.querySelector('input[name="water"]:checked').value === "Si",
-	"internet_provider" :getHTMLValue('internetprovider') ,
-    "phone_provider": document.querySelector('input[name="phone"]:checked').value === "Si",
-    "tv_provider": document.querySelector('input[name="tv"]:checked').value === "Si",
-	"payment_due_date" : getHTMLValue('paytime'),
-	"additional_payments": selectedPayments,
-	"services_bill": convertToInteger( getHTMLValue('costbasic') )     
+        "user_id":convertToInteger( getCookie('id_user') ) ,
+        "energy_provider": document.querySelector('input[name="light"]:checked').value === "Si",
+        "water_provider": document.querySelector('input[name="water"]:checked').value === "Si",
+        "internet_provider" :getHTMLValue('internetprovider') ,
+        "phone_provider": document.querySelector('input[name="phone"]:checked').value === "Si",
+        "tv_provider": document.querySelector('input[name="tv"]:checked').value === "Si",
+        "payment_due_date" : getHTMLValue('paytime'),
+        "additional_payments": selectedPayments,
+        "services_bill": convertToInteger( getHTMLValue('costbasic') )     
     }
 }
 
@@ -87,9 +85,9 @@ function fillSurveyFormIfExist(userDetails) {
     document.getElementById('costbasic').value = userDetails.services_bill;
 
     const checkboxAddPayments = {
-        'Phone':'checkphone', 
-        'Entretainment':'checkentretainment', 
-        'Other':'checkother'
+        'Saldo/Plan Telefónico': 'checkphone', 
+        'Entretenimiento (Netflix|Youtube Premium|Amazon Prime|Spotify...)': 'checkentretainment', 
+        'Otros': 'checkother'
     };
 
     if (userDetails.additional_payments) {
@@ -105,6 +103,31 @@ function fillSurveyFormIfExist(userDetails) {
             }
         });
     }
+
+    if (userDetails.energy_provider) {
+        document.querySelector('input[name="light"][value="Si"]').checked = true;
+    } else {
+        document.querySelector('input[name="light"][value="No"]').checked = true;
+    }
+
+    if (userDetails.water_provider) {
+        document.querySelector('input[name="water"][value="Si"]').checked = true;
+    } else {
+        document.querySelector('input[name="water"][value="No"]').checked = true;
+    }
+
+    if (userDetails.phone_provider) {
+        document.querySelector('input[name="phone"][value="Si"]').checked = true;
+    } else {
+        document.querySelector('input[name="phone"][value="No"]').checked = true;
+    }
+
+    if (userDetails.tv_provider) {
+        document.querySelector('input[name="tv"][value="Si"]').checked = true;
+    } else {
+        document.querySelector('input[name="tv"][value="No"]').checked = true;
+    }
+
 }
 
 function fetchSurveyData() {
@@ -144,7 +167,7 @@ function fetchSurveyData() {
         const user = data.data[0];
         const userDetails = {
             id: user.id,
-            user_id : user.id_user,
+            user_id: user.id_user,
             energy_provider : user.energy_provider,
             water_provider: user.water_provider ,
             internet_provider : user. internet_provider,
@@ -167,6 +190,11 @@ function fetchSurveyData() {
 function updateServiceSurvey() {
     let url = new URL('http://localhost:3000/api/v1/actualizar/servicio');
     let survey = getServiceData();
+
+    if (!areAllValuesValid(survey)) {
+        alert('Llena todos los valor en la encuesta');
+        return;
+    }
 
     fetch(url, {
         method: 'PUT', 

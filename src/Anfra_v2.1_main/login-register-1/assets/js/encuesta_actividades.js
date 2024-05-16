@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 });
 
-function createActivitiesData() {
-    let url = new URL('http://localhost:3000/api/v1//crear/actividad');
+function createActivitiesSurvey() {
+    let url = new URL('http://localhost:3000/api/v1/crear/actividad');
     let survey = getActivitiesData();
     
     if (!areAllValuesValid(survey)) {
@@ -61,36 +61,29 @@ function getActivitiesData() {
     const selectedHobbies = idsHobbies.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
-    })
-    .join(',');
+    }).join(',');
 
 
     const idsWorkshop = ['abilities', 'tecniques', 'health', 'entrepreneurship', 'personal', 'other'];
     const selectedWorkshops = idsWorkshop.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
-    })
-    .join(',');
-
+    }).join(',');
 
     const idsEvents = ['festivals', 'concerts', 'art', 'literature', 'dances', 'conferences', 'parks', 'other'];
     const selectedEvents= idsEvents.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
-    })
-    .join(',');
+    }).join(',');
 
     return{
         "user_id": convertToInteger( getCookie('id_user') ),
@@ -104,20 +97,22 @@ function getActivitiesData() {
 }
 
 function fillSurveyFormIfExist(userDetails) {
-        document.getElementById('amespreferences').value = userDetails.current_status;
-        document.getElementById('sport').value = userDetails.job_title;
-        document.getElementById('sportfrequency').value = userDetails.employer_establishment;
+        console.log(userDetails);
+
+        document.getElementById('gamespreferences').value = userDetails.preferred_game;
+        document.getElementById('sport').value = userDetails.preferred_sport;
+        document.getElementById('sportfrequency').value = userDetails.exercise_frequency;
 
         const checkboxHobbies = {
-            'Dance': 'dance', 
-            'Play instrument':'playinstrument', 
-            'Paint':'paint', 
-            'Draw':'draw', 
-            'Exercise':'excercise', 
-            'Read':'read', 
-            'Walk':'walk', 
-            'Movies':'movies', 
-            'Other':'other'
+            'Baile': 'dance', 
+            'Tocar algún instrumento': 'playinstrument', 
+            'Pintar': 'paint', 
+            'Dibujar':'draw', 
+            'Hacer ejercicio':'excercise', 
+            'Leer':'read', 
+            'Salir a caminar':'walk', 
+            'Series o películas':'movies', 
+            'Otros':'other'
         };
     
         if (userDetails.hobby) {
@@ -135,12 +130,12 @@ function fillSurveyFormIfExist(userDetails) {
         }
 
         const checkboxWorkshops = {
-            'Abilities':'abilities', 
-            'Tecniques':'tecniques', 
-            'Health':'health', 
-            'Entrepreneurship':'entrepreneurship', 
-            'Personal':'personal', 
-            'Other':'other'
+            'Habilidades blandas':'abilities', 
+            'Técnicos(Con relación a la carrera)':'tecniques', 
+            'Bienestar y salud':'health', 
+            'Emprendimiento':'entrepreneurship', 
+            'Desarrollo personal':'personal', 
+            'Otros':'other_workshop'
         };
     
         if (userDetails.workshop_type) {
@@ -158,14 +153,14 @@ function fillSurveyFormIfExist(userDetails) {
         }
 
         const checkboxEvents = {
-            'Festivals': 'festivals', 
-            'Concerts':'concerts',
-            'Art': 'art', 
-            'Literature':'literature',
-            'Dances':'dances',
-            'Conferences':'conferences',
-            'Parks':'parks',
-            'Other':'other'
+            'Festivales': 'festivals', 
+            'Conciertos':'concerts',
+            'Exposiciones de arte': 'art', 
+            'Literatura/poesía':'literature',
+            'Bailes':'dances',
+            'Charlas/Conferencias':'conferences',
+            'Parques recreativos o de diversión':'parks',
+            'Otros':'other_events'
         };
     
         if (userDetails.preferred_social_event) {
@@ -238,7 +233,7 @@ function fetchSurveyData() {
 
 }
 
-function updateActivitiesData() {
+function updateActivitiesSurvey() {
     let url = new URL('http://localhost:3000/api/v1/actualizar/actividad');
     let survey = getActivitiesData();
     

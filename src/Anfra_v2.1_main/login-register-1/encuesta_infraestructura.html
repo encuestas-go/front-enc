@@ -47,7 +47,7 @@
                 <a href="account-category.html" class="prev-page">Volver a la anterior etapa</a>
                 <h2>Datos con relación a información de infraestructura de la casa donde se habita</h2>
                 <p>Introduzca su información  relevante a infraestructura de la casa donde se habita para avanzar al siguiente paso, toda la información se trata de forma segura y confidencial bajo los terminos y condiciones. </p>
-                <form class="account-form" i="commentForm">
+                <form class="account-form" id="commentForm">
                   <div class="row">
                   
                     <div class="select-input birth-date-input form-group ">
@@ -168,7 +168,7 @@
 
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="airconditioning">
-                          <label class="form-check-label" for="fan">Ventilador</label>
+                          <label class="form-check-label" for="airconditioning">Ventilador</label>
                         </div>
 
                         <hr class="my-4">
@@ -179,7 +179,6 @@
                           <label for="basicservices">Servicios Básicos</label>
                           
                           <hr class="my-4">
-  
                           <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="electricity" required>
                             <label class="form-check-label" for="electricity">Electricidad</label>
@@ -208,7 +207,7 @@
   
                       <div class="my-3">
                         <div class="form-check">
-                          <input id="true" name="publicpoint" value="Si" type="radio" class="form-check-input" checked required>
+                          <input id="true" name="publicpoint" value="Si" type="radio" class="form-check-input" required>
                           <label class="form-check-label" for="Si">Sí</label>
                         </div>
                         <div class="form-check">
@@ -255,9 +254,8 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 
     <script src="assets/js/custom.js"></script>
-    <script src="../../HTML/assets/js/cookies.js"></script>
 
-
+    <script src="assets/js/cookies.js"></script>
     <script src="assets/js/validator.js"></script> 
     <script src="assets/js/utils.js"></script>
 
