@@ -4,18 +4,19 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchSurveyData();
     document.getElementById("commentForm").addEventListener("submit", function(event) {
         event.preventDefault();
-        if (existData) {
-            updateServiceSurvey();
+
+        if (!existData) {
+            createEventPublishment();
         } else {
-            createServiceSurvey();
+            updateEventPublishment();
         }
     })
 });
 
 
-function createServiceSurvey() {
-    let url = new URL('http://localhost:3000/api/v1/crear/servicio');
-    let survey = getServiceData();
+function createEventPublishment() {
+    let url = new URL('http://localhost:3000/api/v1/crear/evento');
+    let survey = getEventData();
     
     if (!areAllValuesValid(survey)) {
         alert('Llena todos los valor en la encuesta');
@@ -54,61 +55,42 @@ function createServiceSurvey() {
         setTimeout(() => {}, 2000); 
         console.error('Error:', error); 
     });
+
 }
 
-function getServiceData() {
-    const idsPayments = ['checkphone', 'checkentretainment', 'checkother'];
-    const selectedPayments = idsPayments.filter(id => {
-        const element = document.getElementById(id);
-        return element && element.checked; 
-    })
-    .map(id => {
-        const label = document.querySelector(`label[for="${id}"]`);
-        return label ? label.textContent : ''; 
-    })
-    .join(',');
+function getEventData() {
+    const day = getHTMLValue('inputday');
+    const month = getHTMLValue('inputmonth');
+    const year = getHTMLValue('inputyear');
 
     return{
-    "user_id,":convertToInteger( getCookie('id_user') ) ,
-	"energy_provider": document.querySelector('input[name="light"]:checked').value === "Si",
-    "water_provider": document.querySelector('input[name="water"]:checked').value === "Si",
-	"internet_provider" :getHTMLValue('internetprovider') ,
-    "phone_provider": document.querySelector('input[name="phone"]:checked').value === "Si",
-    "tv_provider": document.querySelector('input[name="tv"]:checked').value === "Si",
-	"payment_due_date" : getHTMLValue('paytime'),
-	"additional_payments": selectedPayments,
-	"services_bill": convertToInteger( getHTMLValue('costbasic') )     
+	"event_name" : getHTMLValue('name_event') ,
+	"date" : `${year}/${month}/${day}`,
+	"hour" : getHTMLValue('time'),
+    "place" :getHTMLValue('place_event'),
+	"description" :getHTMLValue('event_description') ,
+	"category" : getHTMLValue('category_event'),
+	"id_user" : convertToInteger( getCookie('id_user') )
     }
+    
 }
 
 function fillSurveyFormIfExist(userDetails) {
-    document.getElementById('internetprovider').value = userDetails.internet_provider;
-    document.getElementById('paytime').value = userDetails.payment_due_date;
-    document.getElementById('costbasic').value = userDetails.services_bill;
+    document.getElementById('event_name').value = userDetails.event_name;
 
-    const checkboxAddPayments = {
-        'Phone':'checkphone', 
-        'Entretainment':'checkentretainment', 
-        'Other':'checkother'
-    };
+    const eventDate = new Date(userDetails.date);
+    document.getElementById('inputday').value = eventDate.getDate();
+    document.getElementById('inputmonth').value = String(eventDate.getMonth() + 1).padStart(2, '0');
+    document.getElementById('inputyear').value = eventDate.getFullYear();
 
-    if (userDetails.additional_payments) {
-        const additionalArray = userDetails.additional_payments.split(',');
-        additionalArray.forEach(payment => {
-            const trimmedPay= payment.trim();
-            if (checkboxAddPayments[trimmedPay]) {
-                const checkboxId = checkboxAddPayments[trimmedPay];
-                const checkboxElement = document.getElementById(checkboxId);
-                if (checkboxElement) {
-                    checkboxElement.checked = true;
-                }
-            }
-        });
-    }
+    document.getElementById('hour').value = userDetails.hour;
+    document.getElementById('place').value = userDetails.place;
+    document.getElementById('description').value = userDetails.description;
+    document.getElementById('category').value = userDetails.category;
 }
 
 function fetchSurveyData() {
-    let url = new URL('http://localhost:3000/api/v1/consultar/servicio');
+    let url = new URL('http://localhost:3000/api/v1/consultar/evento');
     url.searchParams.append('user_id', getCookie('id_user'));
 
     fetch(url, {
@@ -144,15 +126,14 @@ function fetchSurveyData() {
         const user = data.data[0];
         const userDetails = {
             id: user.id,
-            user_id : user.id_user,
-            energy_provider : user.energy_provider,
-            water_provider: user.water_provider ,
-            internet_provider : user. internet_provider,
-            phone_provider: user.phone_provider,
-            tv_provider : user.tv_provider,
-            payment_due_date : user.payment_due_date,
-            additional_payments: user.additional_payments,
-            services_bill: user.services_bill
+            event_name :  user.event_name,
+            date : user.date,
+            hour : user.hour,
+            place : user.place,
+            description : user.description,
+            category :user.category,
+            id_user: user.id_user,
+
         };
     
         fillSurveyFormIfExist(userDetails);
@@ -164,9 +145,9 @@ function fetchSurveyData() {
     });
 }
 
-function updateServiceSurvey() {
-    let url = new URL('http://localhost:3000/api/v1/actualizar/servicio');
-    let survey = getServiceData();
+function updateEventPublishment() {
+    let url = new URL('http://localhost:3000/api/v1/actualizar/evento');
+    let survey = getEventData();
 
     fetch(url, {
         method: 'PUT', 
