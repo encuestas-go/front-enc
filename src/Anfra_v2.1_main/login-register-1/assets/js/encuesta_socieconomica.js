@@ -214,3 +214,47 @@ function updateSocioeconomicSurvey() {
         console.error('Error:', error); 
     });
 }
+
+
+function deleteSocioeconomicSurvey() {
+    let url = new URL('http://localhost:3000/api/v1/eliminar/nivelSocioeconomico');
+    url.searchParams.append('user_id', getCookie('id_user'));
+    
+    if (!areAllValuesValid(survey)) {
+        alert('Llena todos los valor en la encuesta');
+        return;
+    }
+
+    fetch(url, {
+        method: 'DELETE', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(survey),
+        credentials: 'include' 
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json(); 
+        } else {
+            throw new Error('Failed to create data'); 
+        }
+    })
+    .then(data => {
+        if (data.status_code && data.status_code != 200) {
+            alert('Error al eliminar la encuesta');
+            setTimeout(() => {}, 2000); 
+            return;
+        }
+
+        alert('Eliminado con exito');
+        setTimeout(() => {}, 3000); 
+        location.reload(true); 
+    })
+    .catch(error => {
+        alert('Error al eliminar encuesta');
+        setTimeout(() => {}, 2000); 
+        console.error('Error:', error); 
+    });
+}
