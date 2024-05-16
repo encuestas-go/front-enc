@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("button-delete").addEventListener("click", function(event) {
         event.preventDefault();
-        console.log("El botón de eliminar fue clicado");
+        deleteSocioeconomicSurvey();
     });
 
     document.getElementById("commentForm").addEventListener("submit", function(event) {
@@ -227,18 +227,12 @@ function deleteSocioeconomicSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/nivelSocioeconomico');
     url.searchParams.append('user_id', getCookie('id_user'));
     
-    if (!areAllValuesValid(survey)) {
-        alert('Llena todos los valor en la encuesta');
-        return;
-    }
-
     fetch(url, {
         method: 'DELETE', 
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(survey),
         credentials: 'include' 
     })
     .then(response => {

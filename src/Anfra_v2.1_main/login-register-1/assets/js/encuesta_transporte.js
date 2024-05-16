@@ -1,8 +1,13 @@
 var existData = false;
+hideDeleteButton();
 
 document.addEventListener("DOMContentLoaded", function() {
     
     fetchSurveyData();
+    document.getElementById("button-delete").addEventListener("click", function(event) {
+        event.preventDefault();
+        deleteTransportSurvey();
+    });
 
     document.getElementById("commentForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -136,6 +141,7 @@ function fetchSurveyData() {
 
         existData = true;
         changeButtonContent();
+        showDeleteButton();
 
         const user = data.data[0];
         const userDetails = {
@@ -185,18 +191,12 @@ function deleteTransportSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/medioTransporte');
     url.searchParams.append('user_id', getCookie('id_user'));
     
-    if (!areAllValuesValid(survey)) {
-        alert('Llena todos los valor en la encuesta');
-        return;
-    }
-
     fetch(url, {
         method: 'DELETE', 
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(survey),
         credentials: 'include' 
     })
     .then(response => {

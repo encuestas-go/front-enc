@@ -1,9 +1,13 @@
 var existData = false;
-
+hideDeleteButton();
 
 document.addEventListener("DOMContentLoaded", function() {
 
     fetchSurveyData();
+    document.getElementById("button-delete").addEventListener("click", function(event) {
+        event.preventDefault();
+        deleteEconomicSurvey();
+    });
     
     document.getElementById("commentForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -66,8 +70,7 @@ function getEconomicData() {
     const selected = ids.filter(id => {
         const element = document.getElementById(id);
         return element && element.checked; 
-    })
-    .map(id => {
+    }).map(id => {
         const label = document.querySelector(`label[for="${id}"]`);
         return label ? label.textContent : ''; 
     });
@@ -119,6 +122,7 @@ function fetchSurveyData() {
 
         existData = true;
         changeButtonContent();
+        showDeleteButton();
 
         const user = data.data[0];
         const userDetails = {
@@ -220,18 +224,12 @@ function deleteEconomicSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/nivelEconomico');
     url.searchParams.append('user_id', getCookie('id_user'));
     
-    if (!areAllValuesValid(survey)) {
-        alert('Llena todos los valor en la encuesta');
-        return;
-    }
-
     fetch(url, {
         method: 'DELETE', 
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(survey),
         credentials: 'include' 
     })
     .then(response => {
