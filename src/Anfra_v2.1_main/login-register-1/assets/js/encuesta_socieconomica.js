@@ -1,8 +1,14 @@
 var existData = false;
+hideDeleteButton();
 
 document.addEventListener("DOMContentLoaded", function() {
     
     fetchSurveyData();
+
+    document.getElementById("button-delete").addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log("El botón de eliminar fue clicado");
+    });
 
     document.getElementById("commentForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -48,6 +54,7 @@ function fetchSurveyData() {
 
         existData = true;
         changeButtonContent();
+        showDeleteButton();
 
         const user = data.data[0];
         const userDetails = {

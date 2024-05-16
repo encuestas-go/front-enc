@@ -65,3 +65,11 @@ function changeButtonContent() {
     let btn = document.getElementById('submitBtn'); 
     btn.innerHTML = '<span>Actualizar Encuesta</span> '; 
 }
+
+function showDeleteButton() {
+    document.getElementById("button-delete").style.display = "inline-block";
+}
+
+function hideDeleteButton() {
+    document.getElementById("button-delete").style.display = "none";
+}
