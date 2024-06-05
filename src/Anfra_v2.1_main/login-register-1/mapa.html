@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Información socioeconomica</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+
+    <!-- Custom Css --> 
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/theme-1.css">
+
+    <link rel="stylesheet" href="assets/css/button24.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../HTML/assets/images/logos/logo_upemor.jpg">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/icon-114x114.png">
+
+    <style>
+      #map {
+          height: 400px;
+          width: 100%;
+      }
+      #address {
+          width: 300px;
+      }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLiKs9-NzzikXrDmo0w7IVGNQ9ivt9Kw&libraries=places"></script>
+
+  </head>
+  <body>
+    
+    <div class="ugf-wrapper flat-grey-bg">
+      <div class="ugf-content-block">
+        <div class="logo">
+          <a href="../../HTML/index.html">
+            <!-- <img class="light-logo" src="assets/images/logo.png" alt=""> -->
+            <img class="" src="../login-register-1/assets/images/logoUpemor2.jpg" alt="" height="70px" width="70px">
+          </a>
+        </div>
+        <div class="container-md">
+          <div class="row">
+            <div class="col-lg-7 offset-lg-5 p-sm-0">
+              <div class="ugf-content pt150">
+                <a href="account-category.html" class="prev-page">Volver a la anterior etapa</a>
+                <h2>Datos personales e información socioeconómica</h2>
+                <p>Introduzca su información personal,  de identidad para el llenado de la encuesta relevante a nivel socioeconomico para avanzar al siguiente paso, toda la información se trata de forma segura y confidencial bajo los terminos y condiciones. </p>
+    
+
+                <h1>Geocoding con Google Maps</h1>
+                <input id="address" type="text" placeholder="Ingresa una dirección">
+                <div id="map"></div>
+            
+                <script>
+                    function initMap() {
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: { lat: -34.397, lng: 150.644 },
+                            zoom: 8
+                        });
+            
+                        var input = document.getElementById('address');
+                        var autocomplete = new google.maps.places.Autocomplete(input);
+            
+                        autocomplete.bindTo('bounds', map);
+            
+                        var infowindow = new google.maps.InfoWindow();
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            anchorPoint: new google.maps.Point(0, -29)
+                        });
+            
+                        autocomplete.addListener('place_changed', function() {
+                            infowindow.close();
+                            marker.setVisible(false);
+                            var place = autocomplete.getPlace();
+                            if (!place.geometry) {
+                                window.alert("No details available for input: '" + place.name + "'");
+                                return;
+                            }
+            
+                            // Si el lugar tiene geometría, entonces centramos el mapa en el lugar
+                            if (place.geometry.viewport) {
+                                map.fitBounds(place.geometry.viewport);
+                            } else {
+                                map.setCenter(place.geometry.location);
+                                map.setZoom(17);
+                            }
+                            marker.setPosition(place.geometry.location);
+                            marker.setVisible(true);
+            
+                            var address = '';
+                            if (place.address_components) {
+                                address = [
+                                    (place.address_components[0] && place.address_components[0].short_name || ''),
+                                    (place.address_components[1] && place.address_components[1].short_name || ''),
+                                    (place.address_components[2] && place.address_components[2].short_name || '')
+                                ].join(' ');
+                            }
+            
+                            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+                            infowindow.open(map, marker);
+            
+                            // Aquí puedes enviar la información al backend si es necesario
+                            var lat = place.geometry.location.lat();
+                            var lng = place.geometry.location.lng();
+                            console.log("Latitud: " + lat + ", Longitud: " + lng);
+                            console.log(place.formatted_address)
+            
+                            // Ejemplo de envío al backend
+                            fetch('http://localhost:5501/geocode', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    lat: lat,
+                                    lng: lng,
+                                    address: place.formatted_address
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                            })
+                            .catch(error => console.error('Error:', error));
+                        });
+                    }
+            
+                    window.onload = initMap;
+                </script>
+
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ugf-sidebar flex-bottom ugf-sidebar-bg-4 sidebar-steps">
+        <div class="steps">
+          <div class="step complete-step">
+            <span>1</span>
+            <p>Verificación de Cuenta</p>
+          </div>
+          <div class="step complete-step">
+            <span>2</span>
+            <p>Categoría de encuesta</p>
+          </div>
+          <div class="step step-onprocess">
+            <span>3</span>
+            <p>Datos de encuestado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/countrySelect.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/cookies.js"></script> 
+
+    
+
+  </body>
+</html>
