@@ -1,5 +1,5 @@
-const initialLabels = ['Automovil propio', 'Autobus', 'Ruta', 'Bicicleta', 'Caminar', 'Motocicleta', 'Otro'];
-const initialData = [10, 20, 30, 40, 50];
+const initialLabels = [];
+const initialData = [];
 
 const data = {
     labels: initialLabels,
@@ -70,12 +70,12 @@ function checkDates() {
     if (date1 && date2) {
         let date1Variable = formatDate(date1);
         let date2Variable = formatDate(date2);
-        getTransportReportData(date1Variable, date2Variable);
+        getIncomeReportData(date1Variable, date2Variable);
     } 
 }
 
-function getTransportReportData(start_date, end_date) {
-    let url = new URL('http://localhost:3000/api/v1/reporte/TransportePrincipal');
+function getIncomeReportData(start_date, end_date) {
+    let url = new URL('http://localhost:3000/api/v1/reporte/IngresosMensuales');
     url.searchParams.append('start_date', start_date);
     url.searchParams.append('end_date', end_date);
 
@@ -116,7 +116,7 @@ function getTransportReportData(start_date, end_date) {
 }
 
 function updateChart(data) {
-    const labels = data.map(item => item.primary_transport);
+    const labels = data.map(item => item.income_amount);
     const quantities = data.map(item => item.quantity);
 
     myPolarAreaChart.data.labels = labels;
