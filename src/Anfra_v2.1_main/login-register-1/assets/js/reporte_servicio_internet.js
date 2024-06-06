@@ -75,7 +75,7 @@ function checkDates() {
 }
 
 function getInternetReportData(start_date, end_date) {
-    let url = new URL('http://localhost:5501/api/v1/reporte/ProveedorInternetReporte');
+    let url = new URL('http://localhost:3000/api/v1/reporte/ProveedorInternetReporte');
     url.searchParams.append('start_date', start_date);
     url.searchParams.append('end_date', end_date);
 
@@ -88,7 +88,6 @@ function getInternetReportData(start_date, end_date) {
         credentials: 'include' 
     })
     .then(response => {
-        console.log(response);
         if (response.ok) {
             return response.json(); 
         } else {
@@ -96,7 +95,6 @@ function getInternetReportData(start_date, end_date) {
         }
     })
     .then(data => {
-        console.log(data);
         if (data.status_code && data.status_code != 200) {
             alert('Error al obtener la informacion de servicio de internet');
             setTimeout(() => {}, 2000); 

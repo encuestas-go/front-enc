@@ -1,35 +1,42 @@
-const initialLabels = ['Casa', 'Departamento', 'Cuarto', 'Vecindad', 'Otro'];
-const initialData = [10, 20, 30, 40, 50];
+const initialData = [
+    { housing_type: 'Casa', house_condition: 'Propia', quantity: 10 },
+    { housing_type: 'Casa', house_condition: 'Rentada', quantity: 20 },
+    { housing_type: 'Departamento', house_condition: 'Propia', quantity: 15 },
+    { housing_type: 'Departamento', house_condition: 'Rentada', quantity: 25 }
+];
+
+const initialGroupedData = initialData.reduce((acc, item) => {
+    const key = `${item.housing_type} - ${item.house_condition}`;
+    if (!acc[key]) {
+        acc[key] = 0;
+    }
+    acc[key] += item.quantity;
+    return acc;
+}, {});
+
+const initialLabels = Object.keys(initialGroupedData);
+const initialQuantities = Object.values(initialGroupedData);
 
 const data = {
     labels: initialLabels,
     datasets: [{
-        label: 'Tipo de vivienda y condición',
-        data: initialData,
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(255, 159, 64, 0.5)',
-            'rgba(255, 205, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(54, 162, 235, 0.5)'
-        ]
+        label: 'Cantidad de Alumnos',
+        data: initialQuantities,
+        backgroundColor: initialLabels.map(() => getRandomColor())
     }]
 };
 
 const config = {
-    type: 'polarArea',
+    type: 'bar',
     data: data,
     options: {
         responsive: true,
         scales: {
-            r: {
-                pointLabels: {
-                    display: true,
-                    centerPointLabels: true,
-                    font: {
-                        size: 18
-                    }
-                }
+            x: {
+                stacked: true
+            },
+            y: {
+                stacked: true
             }
         },
         plugins: {
@@ -38,14 +45,14 @@ const config = {
             },
             title: {
                 display: true,
-                text: 'Gráfico de area polar'
+                text: 'Stacked Bar Chart for Housing and Condition Types'
             }
         }
     },
 };
 
 const ctx = document.getElementById('myPolarAreaChart').getContext('2d');
-const myPolarAreaChart = new Chart(ctx, config);
+const myStackedBarChart = new Chart(ctx, config);
 
 document.addEventListener("DOMContentLoaded", function() {
     $(document).ready(function() {
@@ -88,7 +95,6 @@ function getHouseConditionReportData(start_date, end_date) {
         credentials: 'include' 
     })
     .then(response => {
-        console.log(response);
         if (response.ok) {
             return response.json(); 
         } else {
@@ -96,7 +102,6 @@ function getHouseConditionReportData(start_date, end_date) {
         }
     })
     .then(data => {
-        console.log(data);
         if (data.status_code && data.status_code != 200) {
             alert('Error al obtener la informacion de tipo de vivienda y condición');
             setTimeout(() => {}, 2000); 
@@ -118,11 +123,20 @@ function getHouseConditionReportData(start_date, end_date) {
 }
 
 function updateChart(data) {
-    const labels = data.map(item => item.housing_type);
-    const quantities = data.map(item => item.quantity);
+    const groupedData = {};
 
-    myPolarAreaChart.data.labels = labels;
-    myPolarAreaChart.data.datasets[0].data = quantities;
-    myPolarAreaChart.update();
+    data.forEach(item => {
+        const key = `${item.housing_type} - ${item.house_condition}`;
+        if (!groupedData[key]) {
+            groupedData[key] = 0;
+        }
+        groupedData[key] += item.quantity;
+    });
+
+    const labels = Object.keys(groupedData);
+    const quantities = Object.values(groupedData);
+
+    myStackedBarChart.data.labels = labels;
+    myStackedBarChart.data.datasets[0].data = quantities;
+    myStackedBarChart.update();
 }
-
