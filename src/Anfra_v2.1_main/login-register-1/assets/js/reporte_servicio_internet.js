@@ -1,10 +1,10 @@
-const initialLabels = ['Automovil propio', 'Autobus', 'Ruta', 'Bicicleta', 'Caminar', 'Motocicleta', 'Otro'];
+const initialLabels = ['IZZI', 'Infinitum', 'TotalPlay', 'Otro',  'Ninguno'];
 const initialData = [10, 20, 30, 40, 50];
 
 const data = {
     labels: initialLabels,
     datasets: [{
-        label: 'Transporte Principal',
+        label: 'Proveedor Servicio Internet',
         data: initialData,
         backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -70,12 +70,12 @@ function checkDates() {
     if (date1 && date2) {
         let date1Variable = formatDate(date1);
         let date2Variable = formatDate(date2);
-        getTransportReportData(date1Variable, date2Variable);
+        getInternetReportData(date1Variable, date2Variable);
     } 
 }
 
-function getTransportReportData(start_date, end_date) {
-    let url = new URL('http://localhost:3000/api/v1/reporte/TransportePrincipal');
+function getInternetReportData(start_date, end_date) {
+    let url = new URL('http://localhost:5501/api/v1/reporte/ProveedorInternetReporte');
     url.searchParams.append('start_date', start_date);
     url.searchParams.append('end_date', end_date);
 
@@ -88,6 +88,7 @@ function getTransportReportData(start_date, end_date) {
         credentials: 'include' 
     })
     .then(response => {
+        console.log(response);
         if (response.ok) {
             return response.json(); 
         } else {
@@ -95,8 +96,9 @@ function getTransportReportData(start_date, end_date) {
         }
     })
     .then(data => {
+        console.log(data);
         if (data.status_code && data.status_code != 200) {
-            alert('Error al obtener la informacion de transporte');
+            alert('Error al obtener la informacion de servicio de internet');
             setTimeout(() => {}, 2000); 
             return;
         }
@@ -109,14 +111,14 @@ function getTransportReportData(start_date, end_date) {
         updateChart(data.data);
     })
     .catch(error => {
-        alert('Error al obtener la informacion de transporte');
-        setTimeout(() => {}, 2000); 
+        alert('Error al obtener la información de servicio de internet');
+        setTimeout(() => {}, 2000);
         console.error('Error:', error); 
     });
 }
 
 function updateChart(data) {
-    const labels = data.map(item => item.primary_transport);
+    const labels = data.map(item => item.internet_provider);
     const quantities = data.map(item => item.quantity);
 
     myPolarAreaChart.data.labels = labels;
