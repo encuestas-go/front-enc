@@ -1,10 +1,10 @@
-const initialLabels = ['Automovil propio', 'Autobus', 'Ruta', 'Bicicleta', 'Caminar', 'Motocicleta', 'Otro'];
+const initialLabels = ['Casa', 'Departamento', 'Cuarto', 'Vecindad', 'Otro'];
 const initialData = [10, 20, 30, 40, 50];
 
 const data = {
     labels: initialLabels,
     datasets: [{
-        label: 'Transporte Principal',
+        label: 'Tipo de vivienda y condición',
         data: initialData,
         backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -70,12 +70,12 @@ function checkDates() {
     if (date1 && date2) {
         let date1Variable = formatDate(date1);
         let date2Variable = formatDate(date2);
-        getTransportReportData(date1Variable, date2Variable);
+        getHouseConditionReportData(date1Variable, date2Variable);
     } 
 }
 
-function getTransportReportData(start_date, end_date) {
-    let url = new URL('http://localhost:3000/api/v1/reporte/TransportePrincipal');
+function getHouseConditionReportData(start_date, end_date) {
+    let url = new URL('http://localhost:3000/api/v1/reporte/TipoViviendaCondicion');
     url.searchParams.append('start_date', start_date);
     url.searchParams.append('end_date', end_date);
 
@@ -98,7 +98,7 @@ function getTransportReportData(start_date, end_date) {
     .then(data => {
         console.log(data);
         if (data.status_code && data.status_code != 200) {
-            alert('Error al obtener la informacion de transporte');
+            alert('Error al obtener la informacion de tipo de vivienda y condición');
             setTimeout(() => {}, 2000); 
             return;
         }
@@ -111,14 +111,14 @@ function getTransportReportData(start_date, end_date) {
         updateChart(data.data);
     })
     .catch(error => {
-        alert('Error al obtener la informacion de transporte');
+        alert('Error al obtener la informacion de tipo de vivienda y condición');
         setTimeout(() => {}, 2000); 
         console.error('Error:', error); 
     });
 }
 
 function updateChart(data) {
-    const labels = data.map(item => item.primary_transport);
+    const labels = data.map(item => item.housing_type);
     const quantities = data.map(item => item.quantity);
 
     myPolarAreaChart.data.labels = labels;
