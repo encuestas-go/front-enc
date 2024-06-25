@@ -123,4 +123,3 @@ function updateChart(data) {
     myPolarAreaChart.data.datasets[0].data = quantities;
     myPolarAreaChart.update();
 }
-

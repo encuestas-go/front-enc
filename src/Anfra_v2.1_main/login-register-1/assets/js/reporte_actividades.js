@@ -1,44 +1,38 @@
-const initialLabels = [
-    'Baile', 'Tocar algún instrumento', 'Pintar', 'Dibujar', 'Hacer ejercicio',
-    'Leer', 'Salir a caminar', 'Series o películas', 'Otras actividades', 'Festivales',
-    'Conciertos', 'Exposiciones de arte', 'Literatura/poesía', 'Bailes', 'Charlas/Conferencias',
-    'Parques recreativos o de diversión', 'Otros eventos'
-];
-const initialData = [
-    5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 4
+// Datos iniciales dummy (si es necesario)
+const initialData = {
+    dance: 10, play_instrument: 15, paint: 5, draw: 8, do_exercise: 12, read: 20,
+    go_walking: 7, movies: 9, other_activities: 4, festivals: 13, concerts: 16,
+    art_exposition: 6, literature_poetry: 3, dances: 11, conferences: 14,
+    recreational_parks: 10, other_events: 5
+};
+
+const labels = [
+    'Dance', 'Play Instrument', 'Paint', 'Draw', 'Do Exercise', 'Read',
+    'Go Walking', 'Movies', 'Other Activities', 'Festivals', 'Concerts',
+    'Art Exposition', 'Literature Poetry', 'Dances', 'Conferences',
+    'Recreational Parks', 'Other Events'
 ];
 
 const data = {
-    labels: initialLabels,
+    labels: labels,
     datasets: [{
-        label: 'Actividades culturales y eventos sociales',
-        data: initialData,
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.5)', 'rgba(255, 159, 64, 0.5)', 'rgba(255, 205, 86, 0.5)', 
-            'rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(153, 102, 255, 0.5)',
-            'rgba(201, 203, 207, 0.5)', 'rgba(255, 158, 64, 0.5)', 'rgba(255, 206, 86, 0.5)', 
-            'rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(153, 102, 255, 0.5)',
-            'rgba(201, 203, 207, 0.5)', 'rgba(255, 159, 64, 0.5)', 'rgba(255, 205, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)'
-        ]
+        label: 'Cultural Activities',
+        data: Object.values(initialData),
+        backgroundColor: 'rgba(75, 192, 192, 0.5)'
     }]
 };
 
-
 const config = {
-    type: 'polarArea',
+    type: 'bar',
     data: data,
     options: {
         responsive: true,
         scales: {
-            r: {
-                pointLabels: {
-                    display: true,
-                    centerPointLabels: true,
-                    font: {
-                        size: 18
-                    }
-                }
+            x: {
+                stacked: true
+            },
+            y: {
+                stacked: true
             }
         },
         plugins: {
@@ -47,14 +41,14 @@ const config = {
             },
             title: {
                 display: true,
-                text: 'Gráfico de área polar de actividades culturales y eventos sociales'
+                text: 'Cultural Activities Report'
             }
         }
     },
 };
 
 const ctx = document.getElementById('myPolarAreaChart').getContext('2d');
-const myPolarAreaChart = new Chart(ctx, config);
+const myBarChart = new Chart(ctx, config);
 
 document.addEventListener("DOMContentLoaded", function() {
     $(document).ready(function() {
@@ -97,7 +91,6 @@ function getActivitiesReportData(start_date, end_date) {
         credentials: 'include' 
     })
     .then(response => {
-        console.log(response);
         if (response.ok) {
             return response.json(); 
         } else {
@@ -105,7 +98,6 @@ function getActivitiesReportData(start_date, end_date) {
         }
     })
     .then(data => {
-        console.log(data);
         if (data.status_code && data.status_code != 200) {
             alert('Error al obtener la informacion de transporte');
             setTimeout(() => {}, 2000); 
@@ -129,20 +121,20 @@ function getActivitiesReportData(start_date, end_date) {
 
 function updateChart(data) {
     const labels = [
-        'Baile', 'Tocar algún instrumento', 'Pintar', 'Dibujar', 'Hacer ejercicio',
-        'Leer', 'Salir a caminar', 'Series o películas', 'Otras actividades', 'Festivales',
-        'Conciertos', 'Exposiciones de arte', 'Literatura/poesía', 'Bailes', 'Charlas/Conferencias',
+        'Baile', 'Tocar algún instrumento', 'Pintar', 'Dibujar', 'Hacer ejercicio', 'Leer',
+        'Salir a caminar', 'Series o películas', 'Otras actividades', 'Festivales', 'Conciertos',
+        'Exposiciones de arte', 'Literatura/poesía', 'Bailes', 'Charlas/Conferencias',
         'Parques recreativos o de diversión', 'Otros eventos'
     ];
+
     const quantities = [
-        data.dance, data.play_instrument, data.paint, data.draw, data.do_exercise,
-        data.read, data.go_walking, data.movies, data.other_activities, data.festivals,
-        data.concerts, data.art_exposition, data.literature_poesia, data.dances, data.conferences,
+        data.dance, data.play_instrument, data.paint, data.draw, data.do_exercise, data.read,
+        data.go_walking, data.movies, data.other_activities, data.festivals, data.concerts,
+        data.art_exposition, data.literature_poetry, data.dances, data.conferences,
         data.recreational_parks, data.other_events
     ];
 
-    myPolarAreaChart.data.labels = labels;
-    myPolarAreaChart.data.datasets[0].data = quantities;
-    myPolarAreaChart.update();
+    myBarChart.data.labels = labels;
+    myBarChart.data.datasets[0].data = quantities;
+    myBarChart.update();
 }
-

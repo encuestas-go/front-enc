@@ -30,6 +30,14 @@
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="assets/images/icon-114x114.png">
 
+    <style>
+      #map {
+          height: 400px;
+          width: 100%;
+      }
+
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLiKs9-NzzikXrDmo0w7IVGNQ9ivt9Kw&libraries=places"></script>
 
   </head>
   <body>
@@ -271,38 +279,18 @@
                         </select>
                       </div>
   
-
-                      <div class="row">
-                        <div class="col-sm-6 p-sm-0">
-                          <div class="form-group">
-                            <label for="inputaddress">Dirección de residencia</label>
-                            <input type="text" name="address" placeholder="e.g. Col. Texcal" class="form-control" id="inputaddress"  minlength="4" maxlength="100" required>
-                          </div>
-                        </div>
-                      <!--Nacionalidad de usuario -->
-                        <div class="col-sm-6 p-sm-0">
-                          <div class="form-group">
-                            <label for="inputrescity">Ciudad de residencia</label>
-                            <input type="text" name="rescity" placeholder="e.g. Cuernavaca" class="form-control" id="inputrescity" minlength="4" maxlength="100" required>
-                          </div>
-                        </div>
-                      </div>
-                      
-                    <div class="row">
-                      <div class="col-sm-6 p-sm-0">
+                      <div class="select-input birth-date-input form-group">
                         <div class="form-group">
-                          <label for="inputpostalcode">Código postal</label>
-                          <input type="tel" name="postalcode" placeholder="67897" class="form-control" id="postalcode" maxlength="5" minlength="5" required>
+                          <label for="inputaddress">Dirección completa</label>
+                          <div id="map"></div>
                         </div>
                       </div>
 
-                      <div class="col-sm-6 p-sm-0">
+                      <div class="select-input birth-date-input form-group">
                         <div class="form-group">
-                          <label for="inputentifede">Entidad Federativa</label>
-                          <input type="text" name="entfederativa" placeholder="e.g. Morelos" class="form-control" id="inputentifede" minlength="5" maxlength="100" required>
+                          <input id="address" type="text" placeholder="Ingresa una dirección" class="form-control" required>
                         </div>
                       </div>
-                    </div>
                     
                       <div class="select-input birth-date-input form-group ">
                         <label for="inputsocioeconomico">Nivel Socioeconomico</label>
@@ -430,6 +418,7 @@
     
     <script src="assets/js/validator.js"></script> 
     <script src="assets/js/utils.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLiKs9-NzzikXrDmo0w7IVGNQ9ivt9Kw&libraries=places"></script>
 
     <script src="assets/js/encuesta_socieconomica.js"></script>
 

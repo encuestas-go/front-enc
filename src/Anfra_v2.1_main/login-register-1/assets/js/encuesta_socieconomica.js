@@ -1,8 +1,9 @@
 var existData = false;
+let map, marker, infowindow, autocomplete;
 hideDeleteButton();
 
 document.addEventListener("DOMContentLoaded", function() {
-    
+
     fetchSurveyData();
 
     document.getElementById("button-delete").addEventListener("click", function(event) {
@@ -70,9 +71,9 @@ function fetchSurveyData() {
             last_degree_father: user.last_degree_father,
             last_degree_mother: user.last_degree_mother,
             marital_status: user.marital_status,
-            postal_code: user.postal_code,
+            longitude: user.longitude,
+            latitude: user.latitude,
             residence_address: user.residence_address,
-            residence_city: user.residence_city,
             socioeconomic_status: user.socioeconomic_status,
             state: user.state
         };
@@ -89,10 +90,6 @@ function fetchSurveyData() {
 function fillSurveyFormIfExist(userDetails) {
     document.getElementById('inputfullname').value = userDetails.full_name;
     document.getElementById('nationality').value = userDetails.nationality;
-    document.getElementById('inputaddress').value = userDetails.residence_address;
-    document.getElementById('inputrescity').value = userDetails.residence_city;
-    document.getElementById('postalcode').value = userDetails.postal_code;
-    document.getElementById('inputentifede').value = userDetails.state;
     document.getElementById('inputidioma').value = userDetails.language;
 
     const birthDate = new Date(userDetails.birth_date);
@@ -107,6 +104,42 @@ function fillSurveyFormIfExist(userDetails) {
     document.getElementById('inputestpadre').value = userDetails.last_degree_father;
     document.getElementById('inputestmadre').value = userDetails.last_degree_mother;
     document.getElementById('inputage').value = userDetails.age;
+
+    updateMap(userDetails.latitude, userDetails.longitude, userDetails.residence_address);
+}
+
+function updateMap(lat, lng, address) {
+    if (!map) {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: lat, lng: lng },
+            zoom: 17  // Zoom más cercano
+        });
+    } else {
+        map.setCenter({ lat: lat, lng: lng });
+        map.setZoom(17);  // Zoom más cercano
+    }
+
+    if (marker) {
+        marker.setMap(null);
+    }
+
+    marker = new google.maps.Marker({
+        map: map,
+        position: { lat: lat, lng: lng },
+        visible: true
+    });
+
+    if (infowindow) {
+        infowindow.close();
+    }
+
+    infowindow = new google.maps.InfoWindow({
+        content: '<div><strong>Dirección:</strong><br>' + address + '</div>'
+    });
+
+    infowindow.open(map, marker);
+
+    document.getElementById('address').value = address;
 }
 
 function createNewSocioeconomicSurvey() {
@@ -165,10 +198,9 @@ function getSocieconomicData() {
         "gender": getHTMLValue('inputsex'),
         "age": convertToInteger( getHTMLValue('inputage') ),
         "marital_status": getHTMLValue('inputcivil'),
-        "residence_address": getHTMLValue('inputaddress'),
-        "residence_city": getHTMLValue('inputrescity'),
-        "postal_code": convertToInteger( getHTMLValue('postalcode') ),
-        "state": getHTMLValue('inputentifede'),
+        "longitude": window.selectedLng,
+        "latitude": window.selectedLat,
+        "residence_address": window.selectedAdd,
         "socioeconomic_status": getHTMLValue('inputsocioeconomico'),
         "language": getHTMLValue('inputidioma'),
         "degree_aspired": getHTMLValue('inputedu'),
@@ -259,3 +291,63 @@ function deleteSocioeconomicSurvey() {
         console.error('Error:', error); 
     });
 }
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8
+    });
+
+    input = document.getElementById('address');
+    autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.bindTo('bounds', map);
+
+    infowindow = new google.maps.InfoWindow();
+    marker = new google.maps.Marker({
+        map: map,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+
+    autocomplete.addListener('place_changed', function() {
+        infowindow.close();
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+
+        // Si el lugar tiene geometría, entonces centramos el mapa en el lugar
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);  // Zoom más cercano
+        }
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+        }
+
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+        infowindow.open(map, marker);
+
+        // Guardamos la latitud y longitud en variables globales para usarlas al guardar el formulario
+        window.selectedLat = place.geometry.location.lat();
+        window.selectedLng = place.geometry.location.lng();
+        window.selectedAdd = place.formatted_address;
+
+        // Actualizamos el campo de dirección
+        document.getElementById('address').value = place.formatted_address;
+    });
+}
+
+window.onload = initMap;
