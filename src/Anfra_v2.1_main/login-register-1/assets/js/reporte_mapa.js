@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     getMapReportData();
 
+    document.getElementById("commentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        window.print();
+    })
 });
 
 function getMapReportData(start_date, end_date) {

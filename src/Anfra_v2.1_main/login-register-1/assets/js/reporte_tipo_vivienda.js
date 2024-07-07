@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", function() {
             todayHighlight: true
         }).on('changeDate', checkDates);
     });
+
+    document.getElementById("commentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        window.print();
+    })
 });
 
 function checkDates() {
