@@ -1,4 +1,5 @@
 const select = document.getElementById('inputjobsituation');
+let map, marker, infowindow, autocomplete;
 
 document.addEventListener("DOMContentLoaded", function() {
     fetchUsers();
@@ -86,9 +87,6 @@ function fetchSurveyData() {
             return;
         }
 
-        existData = true;
-        changeButtonContent();
-        showDeleteButton();
 
         const user = data.data[0];
         const userDetails = {
@@ -144,7 +142,7 @@ function fillSurveyFormIfExist(userDetails) {
 
 function deleteSocioeconomicSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/nivelSocioeconomico');
-    url.searchParams.append('user_id', getCookie('id_user'));
+    url.searchParams.append('user_id', select.value);
     
     fetch(url, {
         method: 'DELETE', 
@@ -178,3 +176,98 @@ function deleteSocioeconomicSurvey() {
         console.error('Error:', error); 
     });
 }
+
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8
+    });
+
+    input = document.getElementById('address');
+    autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.bindTo('bounds', map);
+
+    infowindow = new google.maps.InfoWindow();
+    marker = new google.maps.Marker({
+        map: map,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+
+    autocomplete.addListener('place_changed', function() {
+        infowindow.close();
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+
+        // Si el lugar tiene geometría, entonces centramos el mapa en el lugar
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);  // Zoom más cercano
+        }
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+        }
+
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+        infowindow.open(map, marker);
+
+        // Guardamos la latitud y longitud en variables globales para usarlas al guardar el formulario
+        window.selectedLat = place.geometry.location.lat();
+        window.selectedLng = place.geometry.location.lng();
+        window.selectedAdd = place.formatted_address;
+
+        // Actualizamos el campo de dirección
+        document.getElementById('address').value = place.formatted_address;
+    });
+}
+
+function updateMap(lat, lng, address) {
+    if (!map) {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: lat, lng: lng },
+            zoom: 17  // Zoom más cercano
+        });
+    } else {
+        map.setCenter({ lat: lat, lng: lng });
+        map.setZoom(17);  // Zoom más cercano
+    }
+
+    if (marker) {
+        marker.setMap(null);
+    }
+
+    marker = new google.maps.Marker({
+        map: map,
+        position: { lat: lat, lng: lng },
+        visible: true
+    });
+
+    if (infowindow) {
+        infowindow.close();
+    }
+
+    infowindow = new google.maps.InfoWindow({
+        content: '<div><strong>Dirección:</strong><br>' + address + '</div>'
+    });
+
+    infowindow.open(map, marker);
+
+    document.getElementById('address').value = address;
+}
+
+window.onload = initMap;

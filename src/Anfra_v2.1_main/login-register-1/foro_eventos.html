@@ -51,15 +51,38 @@
           <div class="row">
             <div class="col-lg-7 offset-lg-5 p-sm-0">
               <div class="ugf-content pt150">
-                <a href="account-category-2.html" class="prev-page">Volver a la anterior etapa</a>
-                <h2>Gestión de eventos</h2>
+                <a href="account-category.html" class="prev-page">Volver a la anterior etapa</a>
+                <h2>Lista de eventos</h2>
+
+
+                <p>Seleccionar al usuario para consultar la información de su encuesta con datos de transporte</p>
+                <form class="account-form" id="commentForm-2">
+                    <div class="row">
+                      <div class="select-input birth-date-input form-group ">
+                        <label for="actualsituation">Usuario</label>
+                        <span></span>
+                            <select id="inputjobsituation" name="jobsituation" class="form-control" required>
+                        <M></M>
+                        </select>
+                      </div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-sm-3 p-sm-0">
+                        <div class="form-group">
+                          <button id="btn-obtener" class="btn" type="submit"><span>Obtener evento</span> </button>
+                        </div>
+                      </div>
+                    </div>
+                </form>
+
                 <p>Publicación de eventos próximos de acuerdo a la demanda de intereses de los estudiantes</p>
                 
                 <form class="account-form" id="commentForm">
                     <div class="row">
 
                       <div class="form-group">
-                        <label for="name_event">Inserta un nombre para tu evento</label>
+                        <label for="name_event">Nombre para tu evento</label>
                         <input type="text" name="name_event" placeholder="e.g. Obra de teatro" class="form-control" id="name_event" required minlength="10" maxlength="100">
                     </div>
 
@@ -105,19 +128,6 @@
 
                 </div>
 
-                <div class="row">
-                  <div class="col-sm-3 p-sm-0">
-                    <div class="form-group">
-                      <button id="submitBtn" class="btn" type="submit"><span>Enviar Encuesta</span> </button>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-6 p-sm-0">
-                    <div class="form-group">
-                      <button class="button-24" id="button-delete">Eliminar encuesta</button>
-                    </div>
-                  </div>
-                </div>
                 </form>
               </div>
             </div>
@@ -160,10 +170,9 @@
 
     <script src="assets/js/utils.js"></script>
 
-    <script src="assets/js/only_privilege.js"></script>
+    <script src="assets/js/only_user.js"></script>
 
-
-    <script src="assets/js/gestion_Eventos.js"></script>
+    <script src="assets/js/gestion_Eventos_user.js"></script>
     
   </body>
 </html>

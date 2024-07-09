@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
         fetchSurveyData();
     });
 
-
-    
     document.getElementById("button-delete").addEventListener("click", function(event) {
         event.preventDefault();
         deleteActivitiesSurvey();
@@ -192,7 +190,7 @@ function fetchSurveyData() {
 
 function deleteActivitiesSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/actividad');
-    url.searchParams.append('user_id', getCookie('id_user'));
+    url.searchParams.append('user_id', select.value);
 
     fetch(url, {
         method: 'DELETE', 

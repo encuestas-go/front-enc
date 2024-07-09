@@ -86,10 +86,6 @@ function fetchSurveyData() {
             return;
         }
 
-        existData = true;
-        changeButtonContent();
-        showDeleteButton();
-
         const user = data.data[0];
         const userDetails = {
             id: user.id,
@@ -125,7 +121,7 @@ function fillSurveyFormIfExist(userDetails) {
 
 function deleteTransportSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/medioTransporte');
-    url.searchParams.append('user_id', getCookie('id_user'));
+    url.searchParams.append('user_id', select.value);
     
     fetch(url, {
         method: 'DELETE', 

@@ -54,7 +54,7 @@
           <div class="row">
             <div class="col-lg-7 offset-lg-5 p-sm-0">
               <div class="ugf-content pt150">
-                <a href="account-category.html" class="prev-page">Volver a la anterior etapa</a>
+                <a href="account-category-2.html" class="prev-page">Volver a la anterior etapa</a>
                 <h2>Datos personales e información socioeconómica</h2>
                 <p>Seleccionar al usuario para consultar la información de su encuesta con datos socioeconomicos</p>
                 <form class="account-form" id="commentForm-2">
@@ -79,6 +79,7 @@
                 <h2>Información del usuario seleccionado</h2>
 
                 <form class="account-form" id="commentForm">
+
                   <div class="row">
                     <div class="col-md-6 p-sm-0">
                       <div class="form-group">
@@ -298,10 +299,16 @@
                         <M></M>
                         </select>
                       </div>
+  
+                      <div class="select-input birth-date-input form-group">
+                        <div class="form-group">
+                          <label for="inputaddress">Dirección completa</label>
+                          <div id="map"></div>
+                        </div>
+                      </div>
 
                       <div class="select-input birth-date-input form-group">
                         <div class="form-group">
-                        <label for="inputaddress">Dirección completa</label>
                           <input id="address" type="text" placeholder="Ingresa una dirección" class="form-control" required>
                         </div>
                       </div>
@@ -375,6 +382,7 @@
                         </div>
                       </div>
 
+
                       <div class="row">
                         <div class="col-sm-3 p-sm-0">
                           <div class="form-group">
@@ -382,6 +390,8 @@
                           </div>
                         </div>
                       </div>
+                      
+                      
                 </form>
               </div>
             </div>
@@ -421,6 +431,9 @@
     
     <script src="assets/js/utils.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLiKs9-NzzikXrDmo0w7IVGNQ9ivt9Kw&libraries=places"></script>
+
+
+    <script src="assets/js/only-admin.js"></script>
 
     <script src="assets/js/encuesta_socioeconomica_admin.js"></script>
 

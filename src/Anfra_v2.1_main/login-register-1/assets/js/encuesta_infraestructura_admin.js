@@ -148,10 +148,6 @@ function fetchSurveyData() {
             return;
         }
 
-        existData = true;
-        changeButtonContent();
-        showDeleteButton();
-
         const user = data.data[0];
         const userDetails = {
             id: user.id,
@@ -181,7 +177,7 @@ function fetchSurveyData() {
 
 function deleteHouseInfrastructureSurvey() {
     let url = new URL('http://localhost:3000/api/v1/eliminar/InfraestructuraCasa');
-    url.searchParams.append('user_id', getCookie('id_user'));
+    url.searchParams.append('user_id', select.value);
     
     fetch(url, {
         method: 'DELETE', 
